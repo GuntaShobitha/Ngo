@@ -1412,4 +1412,74 @@ footer {
 .light-mode .dash-body { background:#f1f5f9; }
 .light-mode .dash-sidebar { background:#ffffff; }
 .light-mode .dash-header { background:rgba(248,250,252,0.95); }
-.light-mode .dash-card, .light-mode .dash-widget-g { background:#ffffff; }
+.light-mode .dash-card, .light-mode .dash-widget-g { background:#ffffff; } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MOBILE FIX */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+
+  .container,
+  .hero-container,
+  .hero-content,
+  .navbar,
+  .nav-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .hero-title {
+    font-size: 2.5rem !important;
+    line-height: 1.1 !important;
+  }
+
+  .hero-buttons {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .hero-buttons .btn {
+    width: 100% !important;
+  }
+}
