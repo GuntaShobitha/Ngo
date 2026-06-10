@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STACKLY — Transforming Lives, Building Futures</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="enhancements.css" />
+  <link rel="stylesheet" href="wow.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress"></div>
+
+<!-- PAGE LOADER -->
+<div id="page-loader">
+  <div class="loader-inner">
+    <div class="loader-logo">STACKLY</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><i class="fas fa-seedling"></i><span>STACKLY</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="campaigns.html">Campaigns</a></li>
+        <li><a href="about.html">Blog</a></li>
+        <li><a href="campaigns.html">Volunteer</a></li>
+        <li><a href="about.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn-nav-login">Login</a>
+        <a href="campaigns.html" class="btn-donate">Donate Now</a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="campaigns.html">Campaigns</a>
+  <a href="about.html">Blog</a>
+  <a href="campaigns.html">Volunteer</a>
+  <a href="about.html">Contact</a>
+  <a href="login.html">Login</a>
+  <a href="campaigns.html" class="btn-donate">Donate Now</a>
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content" data-aos="fade-right">
+        <span class="hero-label">Making a Difference Since 2008</span>
+        <h1 class="hero-title">
+          Changing Lives,<br>
+          <span data-typing='["Building Hope", "Planting Trees", "Healing Communities", "Empowering Youth"]'>Building Hope</span>
+        </h1>
+        <p class="hero-desc">STACKLY works across 32 countries to uplift vulnerable communities through education, healthcare, environmental programs, and emergency relief.</p>
+        <div class="hero-actions">
+          <a href="campaigns.html" class="btn-primary"><i class="fas fa-heart"></i>Donate Now</a>
+          <a href="campaigns.html" class="btn-outline"><i class="fas fa-hands-helping"></i>Join Us</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat-item">
+            <div class="hero-stat-num">250K+</div>
+            <div class="hero-stat-label">Lives Impacted</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="hero-stat-num">32</div>
+            <div class="hero-stat-label">Countries</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="hero-stat-num">$8M+</div>
+            <div class="hero-stat-label">Raised</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual" data-aos="fade-left">
+        <div class="hero-img-main">
+          <div class="hero-img-placeholder">
+            <i class="fas fa-hands-helping"></i>
+            <p style="color:var(--text-muted);font-size:0.85rem">Community Impact</p>
+          </div>
+        </div>
+        <div class="hero-floating-card card1">
+          <div class="hero-fc-icon"><i class="fas fa-users"></i></div>
+          <div class="hero-fc-text">
+            <div class="hero-fc-num">12,400</div>
+            <div class="hero-fc-label">Active Volunteers</div>
+          </div>
+        </div>
+        <div class="hero-floating-card card2">
+          <div class="hero-fc-icon"><i class="fas fa-leaf"></i></div>
+          <div class="hero-fc-text">
+            <div class="hero-fc-num">850K</div>
+            <div class="hero-fc-label">Trees Planted</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT STATISTICS -->
+<section class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="0">
+        <span class="stat-num" data-counter data-target="250000">0</span>
+        <span class="stat-label">People Helped</span>
+      </div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+        <span class="stat-num" data-counter data-target="850000">0</span>
+        <span class="stat-label">Trees Planted</span>
+      </div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+        <span class="stat-num" data-counter data-target="8">0</span>
+        <span class="stat-label">Million $ Raised</span>
+      </div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+        <span class="stat-num" data-counter data-target="12400">0</span>
+        <span class="stat-label">Volunteers</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT PREVIEW -->
+<section class="about-preview">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual" data-aos="fade-right">
+        <div class="about-img-box"><i class="fas fa-globe-africa"></i></div>
+        <div class="about-badge">
+          <span class="about-badge-num">15+</span>
+          <span class="about-badge-text">Years of Impact</span>
+        </div>
+      </div>
+      <div class="about-text" data-aos="fade-left">
+        <span class="section-label">About STACKLY</span>
+        <h2 class="section-title">We Believe Everyone Deserves a Chance to Thrive</h2>
+        <p class="section-subtitle">Founded in 2008, STACKLY has grown from a small community project into a global movement. We channel resources, passion, and expertise into programs that create lasting change.</p>
+        <ul class="about-list">
+          <li><i class="fas fa-check"></i>Transparent operations — 87% of funds go directly to programs</li>
+          <li><i class="fas fa-check"></i>Locally-led initiatives with global support</li>
+          <li><i class="fas fa-check"></i>Independently audited and accredited NGO</li>
+          <li><i class="fas fa-check"></i>32 countries, 480+ active programs in 2024</li>
+        </ul>
+        <a href="about.html" class="btn-primary" style="margin-top:8px"><i class="fas fa-arrow-right"></i>Our Story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR CAUSES -->
+<section class="causes">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <span class="section-label">What We Stand For</span>
+      <h2 class="section-title">Our Core Causes</h2>
+      <p class="section-subtitle" style="margin:0 auto">Every initiative we run is rooted in one of these four pillars that define who we are.</p>
+    </div>
+    <div class="causes-grid">
+      <div class="cause-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="cause-icon"><i class="fas fa-graduation-cap"></i></div>
+        <h3>Education Access</h3>
+        <p>Building schools, funding scholarships, and training teachers in underserved regions worldwide.</p>
+      </div>
+      <div class="cause-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="cause-icon"><i class="fas fa-heartbeat"></i></div>
+        <h3>Healthcare</h3>
+        <p>Mobile clinics, vaccination drives, maternal health, and disease prevention programs.</p>
+      </div>
+      <div class="cause-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="cause-icon"><i class="fas fa-female"></i></div>
+        <h3>Women Empowerment</h3>
+        <p>Microfinance, skills training, and safe spaces for women to build economic independence.</p>
+      </div>
+      <div class="cause-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="cause-icon"><i class="fas fa-leaf"></i></div>
+        <h3>Environment</h3>
+        <p>Reforestation, clean water access, solar energy, and sustainable agriculture initiatives.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED CAMPAIGNS -->
+<section class="campaigns-section">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <span class="section-label">Active Campaigns</span>
+      <h2 class="section-title">Make a Difference Today</h2>
+      <p class="section-subtitle" style="margin:0 auto">Your donation funds real projects with measurable outcomes — every dollar counts.</p>
+    </div>
+    <div class="campaigns-grid">
+      <div class="campaign-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="campaign-img"><i class="fas fa-school"></i></div>
+        <div class="campaign-body">
+          <span class="campaign-tag">Education</span>
+          <h3>Build 20 Schools in Sub-Saharan Africa</h3>
+          <p>Give 6,000 children access to quality primary education by constructing essential school facilities.</p>
+          <div class="progress-wrap">
+            <div class="progress-meta"><span>$142,000 raised</span><span>71%</span></div>
+            <div class="progress-bar"><div class="progress-fill" data-width="71"></div></div>
+          </div>
+          <div class="campaign-footer">
+            <div class="campaign-amount"><span>$142K</span><span> of $200K goal</span></div>
+            <a href="campaigns.html" class="btn-primary" style="padding:8px 18px;font-size:0.78rem">Donate</a>
+          </div>
+        </div>
+      </div>
+      <div class="campaign-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="campaign-img"><i class="fas fa-tint"></i></div>
+        <div class="campaign-body">
+          <span class="campaign-tag">Environment</span>
+          <h3>Clean Water for 50 Villages in Kenya</h3>
+          <p>Install solar-powered water purification systems to provide safe drinking water for 120,000 people.</p>
+          <div class="progress-wrap">
+            <div class="progress-meta"><span>$89,500 raised</span><span>45%</span></div>
+            <div class="progress-bar"><div class="progress-fill" data-width="45"></div></div>
+          </div>
+          <div class="campaign-footer">
+            <div class="campaign-amount"><span>$89.5K</span><span> of $200K goal</span></div>
+            <a href="campaigns.html" class="btn-primary" style="padding:8px 18px;font-size:0.78rem">Donate</a>
+          </div>
+        </div>
+      </div>
+      <div class="campaign-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="campaign-img"><i class="fas fa-seedling"></i></div>
+        <div class="campaign-body">
+          <span class="campaign-tag">Environment</span>
+          <h3>Million Tree Reforestation Drive 2025</h3>
+          <p>Restore degraded ecosystems across Southeast Asia, creating green corridors and local jobs.</p>
+          <div class="progress-wrap">
+            <div class="progress-meta"><span>$224,000 raised</span><span>90%</span></div>
+            <div class="progress-bar"><div class="progress-fill" data-width="90"></div></div>
+          </div>
+          <div class="campaign-footer">
+            <div class="campaign-amount"><span>$224K</span><span> of $250K goal</span></div>
+            <a href="campaigns.html" class="btn-primary" style="padding:8px 18px;font-size:0.78rem">Donate</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-center"><a href="campaigns.html" class="btn-outline">View All Campaigns <i class="fas fa-arrow-right"></i></a></div>
+  </div>
+</section>
+
+<!-- SUCCESS STORIES -->
+<section class="stories">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <span class="section-label">Real Impact</span>
+      <h2 class="section-title">Stories of Transformation</h2>
+    </div>
+    <div class="stories-grid">
+      <div class="story-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="story-quote">&ldquo;</div>
+        <p class="story-text">Thanks to STACKLY's scholarship program, I was the first in my family to attend university. Today I'm an engineer building infrastructure in my hometown.</p>
+        <div class="story-author">
+          <div class="story-avatar"><i class="fas fa-user"></i></div>
+          <div>
+            <div class="story-name">Amara Diallo</div>
+            <div class="story-role">Engineer — Dakar, Senegal</div>
+          </div>
+        </div>
+      </div>
+      <div class="story-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="story-quote">&ldquo;</div>
+        <p class="story-text">The women's cooperative launched with STACKLY's support now employs 40 women. We've tripled our village's average income in just three years.</p>
+        <div class="story-author">
+          <div class="story-avatar"><i class="fas fa-user"></i></div>
+          <div>
+            <div class="story-name">Priya Nair</div>
+            <div class="story-role">Cooperative Leader — Kerala, India</div>
+          </div>
+        </div>
+      </div>
+      <div class="story-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="story-quote">&ldquo;</div>
+        <p class="story-text">When the floods destroyed our harvest, STACKLY's emergency team arrived within 72 hours. They didn't just help us survive — they helped us rebuild.</p>
+        <div class="story-author">
+          <div class="story-avatar"><i class="fas fa-user"></i></div>
+          <div>
+            <div class="story-name">Tomás Rivera</div>
+            <div class="story-role">Farmer — Oaxaca, Mexico</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOLUNTEER OPPORTUNITIES -->
+<section class="volunteer-preview">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <span class="section-label">Get Involved</span>
+      <h2 class="section-title">Volunteer Opportunities</h2>
+      <p class="section-subtitle" style="margin:0 auto">Whether remote or in-field, there's a role for your passion and skills.</p>
+    </div>
+    <div class="volunteer-grid">
+      <div class="vol-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="vol-card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+        <h3>Education Facilitator</h3>
+        <p>Teach English, maths, or vocational skills in our partner schools and learning centres.</p>
+        <div class="vol-card-meta">
+          <span class="vol-tag">Remote</span><span class="vol-tag">On-Site</span>
+        </div>
+      </div>
+      <div class="vol-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="vol-card-icon"><i class="fas fa-stethoscope"></i></div>
+        <h3>Healthcare Support</h3>
+        <p>Assist medical teams at mobile clinics, vaccination camps, and health awareness events.</p>
+        <div class="vol-card-meta">
+          <span class="vol-tag">On-Site</span><span class="vol-tag">Short-term</span>
+        </div>
+      </div>
+      <div class="vol-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="vol-card-icon"><i class="fas fa-laptop-code"></i></div>
+        <h3>Tech & Communications</h3>
+        <p>Build websites, manage social media, or develop apps that help us reach more donors and beneficiaries.</p>
+        <div class="vol-card-meta">
+          <span class="vol-tag">Remote</span><span class="vol-tag">Flexible</span>
+        </div>
+      </div>
+    </div>
+    <div class="grid-center" data-aos="fade-up"><a href="campaigns.html" class="btn-primary"><i class="fas fa-hands-helping"></i>Become a Volunteer</a></div>
+  </div>
+</section>
+
+<!-- UPCOMING EVENTS -->
+<section class="events-section">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <span class="section-label">Calendar</span>
+      <h2 class="section-title">Upcoming Events</h2>
+    </div>
+    <div class="events-list">
+      <div class="event-item" data-aos="fade-up" data-aos-delay="0">
+        <div class="event-date"><div class="event-date-day">14</div><div class="event-date-month">Jul</div></div>
+        <div class="event-divider"></div>
+        <div class="event-info">
+          <h3>Global Giving Summit 2025</h3>
+          <div class="event-location"><i class="fas fa-map-marker-alt"></i> Geneva, Switzerland + Online</div>
+        </div>
+        <a href="about.html" class="btn-outline" style="padding:8px 18px;font-size:0.78rem;white-space:nowrap">Register</a>
+      </div>
+      <div class="event-item" data-aos="fade-up" data-aos-delay="80">
+        <div class="event-date"><div class="event-date-day">22</div><div class="event-date-month">Aug</div></div>
+        <div class="event-divider"></div>
+        <div class="event-info">
+          <h3>Tree Planting Marathon — Nairobi</h3>
+          <div class="event-location"><i class="fas fa-map-marker-alt"></i> Karura Forest, Nairobi, Kenya</div>
+        </div>
+        <a href="campaigns.html" class="btn-outline" style="padding:8px 18px;font-size:0.78rem;white-space:nowrap">Join</a>
+      </div>
+      <div class="event-item" data-aos="fade-up" data-aos-delay="160">
+        <div class="event-date"><div class="event-date-day">05</div><div class="event-date-month">Sep</div></div>
+        <div class="event-divider"></div>
+        <div class="event-info">
+          <h3>Women & Work: Skills Bootcamp</h3>
+          <div class="event-location"><i class="fas fa-map-marker-alt"></i> Mumbai, India</div>
+        </div>
+        <a href="campaigns.html" class="btn-outline" style="padding:8px 18px;font-size:0.78rem;white-space:nowrap">Register</a>
+      </div>
+      <div class="event-item" data-aos="fade-up" data-aos-delay="240">
+        <div class="event-date"><div class="event-date-day">18</div><div class="event-date-month">Oct</div></div>
+        <div class="event-divider"></div>
+        <div class="event-info">
+          <h3>Annual Charity Gala — New York</h3>
+          <div class="event-location"><i class="fas fa-map-marker-alt"></i> The Plaza Hotel, New York, USA</div>
+        </div>
+        <a href="about.html" class="btn-outline" style="padding:8px 18px;font-size:0.78rem;white-space:nowrap">RSVP</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <span class="section-label">Voices of Change</span>
+      <h2 class="section-title">What People Are Saying</h2>
+    </div>
+    <div class="testimonials-wrapper">
+      <div class="testimonials-track">
+        <div class="testimonial-card">
+          <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="t-text">STACKLY is one of the most transparent NGOs I've ever donated to. I can see exactly how my money is being used — and the results speak for themselves.</p>
+          <div class="t-author"><div class="t-avatar"><i class="fas fa-user"></i></div><div><div class="t-name">Sarah Mitchell</div><div class="t-role">Regular Donor, UK</div></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="t-text">I volunteered for three months in Bangladesh. It changed my perspective on life completely. The community is incredible and the STACKLY team is world-class.</p>
+          <div class="t-author"><div class="t-avatar"><i class="fas fa-user"></i></div><div><div class="t-name">James Okafor</div><div class="t-role">Volunteer, Nigeria</div></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+          <p class="t-text">As a corporate partner, we've seen firsthand the impact of STACKLY's programs. Our CSR investment here has delivered genuine, measurable social value.</p>
+          <div class="t-author"><div class="t-avatar"><i class="fas fa-building"></i></div><div><div class="t-name">Chen Wei</div><div class="t-role">CSR Director, Singapore</div></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="t-text">The healthcare program saved my daughter's life. I had no money for treatment, and STACKLY's mobile clinic came to our village at the right time.</p>
+          <div class="t-author"><div class="t-avatar"><i class="fas fa-user"></i></div><div><div class="t-name">Fatima Al-Hassan</div><div class="t-role">Beneficiary, Mali</div></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="t-text">I've worked with many NGOs over my career. STACKLY's operational efficiency and community-first approach sets them apart from everyone else.</p>
+          <div class="t-author"><div class="t-avatar"><i class="fas fa-user"></i></div><div><div class="t-name">Dr. Elena Papadopoulos</div><div class="t-role">UN Advisor, Greece</div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonials-nav">
+      <button class="t-nav-btn t-prev"><i class="fas fa-arrow-left"></i></button>
+      <button class="t-nav-btn t-next"><i class="fas fa-arrow-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div class="newsletter-text" data-aos="fade-right">
+        <h2>Stay Connected to the Cause</h2>
+        <p>Get monthly impact reports, campaign updates, and volunteer opportunities in your inbox.</p>
+      </div>
+      <form class="newsletter-form" data-form="newsletter" data-aos="fade-left">
+        <input type="email" placeholder="Your email address" required />
+        <button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i>Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><i class="fas fa-seedling"></i>Hope<span>Haven</span></a>
+        <p>Working to create a world where every person has access to education, healthcare, and opportunity — regardless of where they were born.</p>
+        <div class="footer-social">
+          <a href="index.html" class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="index.html" class="social-btn" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="index.html" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="index.html" class="social-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="index.html" class="social-btn" title="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="campaigns.html">Campaigns</a></li>
+          <li><a href="about.html">Blog</a></li>
+          <li><a href="campaigns.html">Volunteer</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Work</h4>
+        <ul>
+          <li><a href="services.html">Education Programs</a></li>
+          <li><a href="services.html">Healthcare</a></li>
+          <li><a href="services.html">Women Empowerment</a></li>
+          <li><a href="services.html">Environment</a></li>
+          <li><a href="services.html">Emergency Relief</a></li>
+          <li><a href="campaigns.html">Current Campaigns</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="about.html"><i class="fas fa-map-marker-alt" style="color:var(--accent);margin-right:6px"></i>Geneva, Switzerland</a></li>
+          <li><a href="about.html"><i class="fas fa-phone" style="color:var(--accent);margin-right:6px"></i>+41 22 123 4567</a></li>
+          <li><a href="about.html"><i class="fas fa-envelope" style="color:var(--accent);margin-right:6px"></i>hello@Stackly.org</a></li>
+          <li><a href="login.html">Staff Login</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 STACKLY. All rights reserved. Registered NGO — EIN: 12-3456789</p>
+      <div class="footer-bottom-links">
+        <a href="index.html">Privacy Policy</a>
+        <a href="index.html">Terms of Use</a>
+        <a href="index.html">Annual Report</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- PARTNER MARQUEE -->
+<section class="marquee-section" style="margin-top:0">
+  <div class="marquee-track" id="marquee-track">
+    <span class="marquee-item"><i class="fas fa-globe"></i>UNICEF</span>
+    <span class="marquee-item"><i class="fas fa-hands-helping"></i>WHO</span>
+    <span class="marquee-item"><i class="fas fa-seedling"></i>WWF</span>
+    <span class="marquee-item"><i class="fas fa-heart"></i>Red Cross</span>
+    <span class="marquee-item"><i class="fas fa-graduation-cap"></i>UNESCO</span>
+    <span class="marquee-item"><i class="fas fa-leaf"></i>Greenpeace</span>
+    <span class="marquee-item"><i class="fas fa-star"></i>Oxfam</span>
+    <span class="marquee-item"><i class="fas fa-globe-africa"></i>CARE</span>
+    <span class="marquee-item"><i class="fas fa-globe"></i>UNICEF</span>
+    <span class="marquee-item"><i class="fas fa-hands-helping"></i>WHO</span>
+    <span class="marquee-item"><i class="fas fa-seedling"></i>WWF</span>
+    <span class="marquee-item"><i class="fas fa-heart"></i>Red Cross</span>
+    <span class="marquee-item"><i class="fas fa-graduation-cap"></i>UNESCO</span>
+    <span class="marquee-item"><i class="fas fa-leaf"></i>Greenpeace</span>
+    <span class="marquee-item"><i class="fas fa-star"></i>Oxfam</span>
+    <span class="marquee-item"><i class="fas fa-globe-africa"></i>CARE</span>
+  </div>
+</section>
+
+<!-- FLOATING DONATE WIDGET -->
+<div id="floating-donate">
+  <div class="float-donate-card">
+    <div class="fdc-title">Quick Donate 💚</div>
+    <div class="fdc-amounts">
+      <button class="fdc-amt" onclick="selectAmt(this,'10')">$10</button>
+      <button class="fdc-amt active" onclick="selectAmt(this,'25')">$25</button>
+      <button class="fdc-amt" onclick="selectAmt(this,'50')">$50</button>
+      <button class="fdc-amt" onclick="selectAmt(this,'100')">$100</button>
+    </div>
+    <a href="campaigns.html" class="fdc-cta" id="fdc-cta">Donate $25 Now</a>
+  </div>
+  <div class="float-donate-btn-wrap">
+    <span class="float-donate-pulse"></span>
+    <a href="campaigns.html" class="float-donate-btn"><i class="fas fa-heart"></i> Donate Now</a>
+  </div>
+</div>
+
+<script>
+// Scroll progress
+(function(){
+  const bar = document.getElementById('scroll-progress');
+  if (!bar) return;
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (window.scrollY / h * 100) + '%';
+  }, {passive:true});
+})();
+
+// Floating donate amount selector
+function selectAmt(el, val) {
+  document.querySelectorAll('.fdc-amt').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('fdc-cta').textContent = 'Donate $' + val + ' Now';
+}
+
+// Hide floating donate when footer visible
+(function(){
+  const widget = document.getElementById('floating-donate');
+  const footer = document.querySelector('footer');
+  if (!widget || !footer) return;
+  const obs = new IntersectionObserver(entries => {
+    widget.style.opacity = entries[0].isIntersecting ? '0' : '1';
+    widget.style.pointerEvents = entries[0].isIntersecting ? 'none' : '';
+  }, {threshold:0.1});
+  obs.observe(footer);
+})();
+</script>
+
+<script src="main.js"></script>
+<script src="enhancements.js"></script>
+</body>
+</html>

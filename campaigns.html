@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campaigns — STACKLY</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="enhancements.css" />
+  <link rel="stylesheet" href="wow.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .filter-bar { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:40px; }
+    .filter-btn { padding:8px 20px; border-radius:8px; border:1px solid var(--border-subtle); background:transparent; color:var(--text-secondary); font-size:0.78rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; transition:var(--transition); font-family:'Inter',sans-serif; }
+    .filter-btn:hover, .filter-btn.active { background:var(--accent-glow); border-color:var(--accent); color:var(--accent); }
+    .campaigns-full-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .completed-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:40px; }
+    .completed-card { background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:var(--radius); padding:24px; display:flex; gap:20px; align-items:flex-start; opacity:0.75; }
+    .completed-icon { width:48px; height:48px; background:rgba(34,197,94,0.08); border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--accent); font-size:1.1rem; flex-shrink:0; }
+    .completed-info h3 { font-size:0.92rem; margin-bottom:6px; }
+    .completed-info p { font-size:0.78rem; color:var(--text-muted); }
+    .completed-badge { display:inline-block; background:rgba(34,197,94,0.12); color:var(--accent); font-size:0.68rem; font-weight:700; padding:2px 8px; border-radius:6px; margin-top:6px; }
+    .donate-cta { padding:80px 0; background:linear-gradient(135deg,rgba(34,197,94,0.08) 0%,rgba(59,130,246,0.04) 100%); border-top:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle); }
+    .donate-cta-inner { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+    .donate-amounts { display:flex; gap:12px; flex-wrap:wrap; margin-top:20px; }
+    .amount-btn { padding:10px 22px; border:1px solid var(--border-subtle); border-radius:8px; background:var(--bg-card); color:var(--text-secondary); font-size:0.9rem; font-weight:600; cursor:pointer; transition:var(--transition); font-family:'Syne',sans-serif; }
+    .amount-btn:hover, .amount-btn.active { border-color:var(--accent); color:var(--accent); background:var(--accent-glow); }
+    @media(max-width:1024px){ .campaigns-full-grid{grid-template-columns:repeat(2,1fr);} .completed-grid{grid-template-columns:repeat(2,1fr);} .donate-cta-inner{grid-template-columns:1fr;} }
+    @media(max-width:600px){ .campaigns-full-grid{grid-template-columns:1fr;} .completed-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+<div id="page-loader"><div class="loader-inner"><div class="loader-logo">STACKLY</div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div></div>
+<nav class="navbar" id="navbar"><div class="container"><div class="nav-inner">
+  <a href="index.html" class="nav-logo"><i class="fas fa-seedling"></i><span>STACKLY</span></a>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="campaigns.html" class="active">Campaigns</a></li><li><a href="about.html">Blog</a></li><li><a href="campaigns.html">Volunteer</a></li><li><a href="about.html">Contact</a></li></ul>
+  <div class="nav-actions"><a href="login.html" class="btn-nav-login">Login</a><a href="campaigns.html" class="btn-donate">Donate Now</a></div>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</div></div></nav>
+<div class="mobile-menu" id="mobileMenu"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="campaigns.html">Campaigns</a><a href="about.html">Blog</a><a href="campaigns.html">Volunteer</a><a href="about.html">Contact</a><a href="login.html">Login</a><a href="campaigns.html" class="btn-donate">Donate Now</a></div>
+
+<section class="page-hero">
+  <span class="section-label">Fund Change</span>
+  <h1><span style="color:var(--accent)">Campaigns</span> & Fundraising</h1>
+  <p>Every campaign represents a real community with real needs. Choose a cause, donate, and track the impact of your gift.</p>
+  <div class="breadcrumb"><a href="index.html">Home</a><i class="fas fa-chevron-right" style="font-size:0.65rem"></i><span>Campaigns</span></div>
+</section>
+
+<!-- ONGOING CAMPAIGNS -->
+<section style="padding:80px 0;">
+  <div class="container">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:40px" data-aos="fade-up">
+      <div><span class="section-label">Live Now</span><h2 class="section-title" style="margin-bottom:0">Ongoing Campaigns</h2></div>
+    </div>
+    <div class="filter-bar" data-aos="fade-up">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">Education</button>
+      <button class="filter-btn">Healthcare</button>
+      <button class="filter-btn">Environment</button>
+      <button class="filter-btn">Emergency</button>
+      <button class="filter-btn">Women</button>
+    </div>
+    <div class="campaigns-full-grid">
+      <div class="campaign-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="campaign-img"><i class="fas fa-school"></i></div>
+        <div class="campaign-body">
+          <span class="campaign-tag">Education</span>
+          <h3>Build 20 Schools in Sub-Saharan Africa</h3>
+          <p>Give 6,000 children access to quality primary education by constructing essential school facilities in Ghana, Kenya, and Tanzania.</p>
+          <div class="progress-wrap"><div class="progress-meta"><span>$142,000 raised</span><span>71%</span></div><div class="progress-bar"><div class="progress-fill" data-width="71"></div></div></div>
+          <div class="campaign-footer"><div class="campaign-amount"><span>$142K</span><span> of $200K</span></div><a href="#donate" class="btn-primary" style="padding:8px 18px;font-size:0.78rem">Donate</a></div>
+        </div>
+      </div>
+      <div class="campaign-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="campaign-img"><i class="fas fa-tint"></i></div>
+        <div class="campaign-body">
+          <span class="campaign-tag">Environment</span>
+          <h3>Clean Water for 50 Villages in Kenya</h3>
+          <p>Solar-powered water purification for 120,000 people across remote Kenyan villages currently walking 6+ hours for water daily.</p>
+          <div class="progress-wrap"><div class="progress-meta"><span>$89,500 raised</span><span>45%</span></div><div class="progress-bar"><div class="progress-fill" data-width="45"></div></div></div>
+          <div class="campaign-footer"><div class="campaign-amount"><span>$89.5K</span><span> of $200K</span></div><a href="#donate" class="btn-primary" style="padding:8px 18px;font-size:0.78rem">Donate</a></div>
+        </div>
+      </div>
+      <div class="campaign-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="campaign-img"><i class="fas fa-seedling"></i></div>
+        <div class="campaign-body">
+          <span class="campaign-tag">Environment</span>
+          <h3>Million Tree Reforestation Drive 2025</h3>
+          <p>Restore degraded ecosystems across Southeast Asia, creating biodiversity corridors and employing 800 local workers.</p>
+          <div class="progress-wrap"><div class="progress-meta"><span>$224,000 raised</span><span>90%</span></div><div class="progress-bar"><div class="progress-fill" data-width="90"></div></div></div>
+          <div class="campaign-footer"><div class="campaign-amount"><span>$224K</span><span> of $250K</span></div><a href="#donate" class="btn-primary" style="padding:8px 18px;font-size:0.78rem">Donate</a></div>
+        </div>
+      </div>
+      <div class="campaign-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="campaign-img"><i class="fas fa-heartbeat"></i></div>
+        <div class="campaign-body">
+          <span class="campaign-tag">Healthcare</span>
+          <h3>10 New Mobile Clinics for Rural India</h3>
+          <p>Fully equipped medical vehicles to bring essential healthcare to 200,000 people in Bihar and Uttar Pradesh.</p>
+          <div class="progress-wrap"><div class="progress-meta"><span>$55,000 raised</span><span>37%</span></div><div class="progress-bar"><div class="progress-fill" data-width="37"></div></div></div>
+          <div class="campaign-footer"><div class="campaign-amount"><span>$55K</span><span> of $150K</span></div><a href="#donate" class="btn-primary" style="padding:8px 18px;font-size:0.78rem">Donate</a></div>
+        </div>
+      </div>
+      <div class="campaign-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="campaign-img"><i class="fas fa-female"></i></div>
+        <div class="campaign-body">
+          <span class="campaign-tag">Women</span>
+          <h3>1,000 Women Entrepreneurs Fund</h3>
+          <p>Microloans and 6-month business mentorship for women entrepreneurs in East Africa to build sustainable livelihoods.</p>
+          <div class="progress-wrap"><div class="progress-meta"><span>$78,000 raised</span><span>62%</span></div><div class="progress-bar"><div class="progress-fill" data-width="62"></div></div></div>
+          <div class="campaign-footer"><div class="campaign-amount"><span>$78K</span><span> of $125K</span></div><a href="#donate" class="btn-primary" style="padding:8px 18px;font-size:0.78rem">Donate</a></div>
+        </div>
+      </div>
+      <div class="campaign-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="campaign-img"><i class="fas fa-hand-holding-heart"></i></div>
+        <div class="campaign-body">
+          <span class="campaign-tag">Emergency</span>
+          <h3>Flood Relief — Bangladesh 2025</h3>
+          <p>Emergency food, shelter, and medical care for 40,000 families displaced by the worst floods in a decade.</p>
+          <div class="progress-wrap"><div class="progress-meta"><span>$188,000 raised</span><span>94%</span></div><div class="progress-bar"><div class="progress-fill" data-width="94"></div></div></div>
+          <div class="campaign-footer"><div class="campaign-amount"><span>$188K</span><span> of $200K</span></div><a href="#donate" class="btn-primary" style="padding:8px 18px;font-size:0.78rem">Donate</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DONATE CTA -->
+<section class="donate-cta" id="donate">
+  <div class="container"><div class="donate-cta-inner">
+    <div data-aos="fade-right">
+      <span class="section-label">Make an Impact</span>
+      <h2 class="section-title">Your Donation Saves Lives</h2>
+      <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:8px">$25 provides school supplies for one child for a year. $50 covers a vaccination for 10 children. $100 plants 50 trees. Every amount changes a life.</p>
+      <div class="donate-amounts">
+        <button class="amount-btn">$10</button>
+        <button class="amount-btn active">$25</button>
+        <button class="amount-btn">$50</button>
+        <button class="amount-btn">$100</button>
+        <button class="amount-btn">$500</button>
+        <button class="amount-btn">Custom</button>
+      </div>
+    </div>
+    <div data-aos="fade-left">
+      <form data-form="donate" style="background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:var(--radius);padding:32px;">
+        <h3 style="margin-bottom:24px;font-size:1.1rem">Complete Your Donation</h3>
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" class="form-input" placeholder="John" required /></div>
+          <div class="form-group"><label>Last Name</label><input type="text" class="form-input" placeholder="Doe" required /></div>
+        </div>
+        <div class="form-group"><label>Email Address</label><input type="email" class="form-input" placeholder="john@email.com" required /></div>
+        <div class="form-group"><label>Donation Amount ($)</label><input type="number" class="form-input" placeholder="25" min="1" required /></div>
+        <div class="form-group"><label>Designate to Campaign</label>
+          <select class="form-select">
+            <option>General Fund (where needed most)</option>
+            <option>Build 20 Schools</option>
+            <option>Clean Water Kenya</option>
+            <option>Million Tree Drive</option>
+            <option>Mobile Clinics India</option>
+            <option>Women Entrepreneurs Fund</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%;justify-content:center"><i class="fas fa-heart"></i>Complete Donation</button>
+        <p style="font-size:0.72rem;color:var(--text-muted);text-align:center;margin-top:12px"><i class="fas fa-lock" style="color:var(--accent)"></i> Secure & encrypted. STACKLY is a registered 501(c)(3).</p>
+      </form>
+    </div>
+  </div></div>
+</section>
+
+<!-- COMPLETED CAMPAIGNS -->
+<section style="padding:80px 0;">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <span class="section-label">Delivered</span>
+      <h2 class="section-title">Completed Campaigns</h2>
+      <p class="section-subtitle" style="margin:0 auto">Past campaigns where donors like you made a measurable, lasting impact.</p>
+    </div>
+    <div class="completed-grid">
+      <div class="completed-card" data-aos="fade-up" data-aos-delay="0"><div class="completed-icon"><i class="fas fa-graduation-cap"></i></div><div class="completed-info"><h3>1,000 Girls' Education Scholarships</h3><p>Funded 1,000 secondary school scholarships for girls in Nigeria and Cameroon.</p><span class="completed-badge">✓ $120K Raised</span></div></div>
+      <div class="completed-card" data-aos="fade-up" data-aos-delay="80"><div class="completed-icon"><i class="fas fa-solar-panel"></i></div><div class="completed-info"><h3>Solar Power for 30 Health Clinics</h3><p>30 rural health facilities in Malawi and Zambia now powered by clean solar energy.</p><span class="completed-badge">✓ $85K Raised</span></div></div>
+      <div class="completed-card" data-aos="fade-up" data-aos-delay="160"><div class="completed-icon"><i class="fas fa-home"></i></div><div class="completed-info"><h3>Earthquake Relief — Turkey 2023</h3><p>Emergency shelter kits for 8,000 families in the wake of the Kahramanmaraş earthquake.</p><span class="completed-badge">✓ $320K Raised</span></div></div>
+      <div class="completed-card" data-aos="fade-up" data-aos-delay="0"><div class="completed-icon"><i class="fas fa-seedling"></i></div><div class="completed-info"><h3>500K Trees in the Amazon</h3><p>2023 reforestation pilot in Brazil restored 2,000 hectares of degraded rainforest.</p><span class="completed-badge">✓ $180K Raised</span></div></div>
+      <div class="completed-card" data-aos="fade-up" data-aos-delay="80"><div class="completed-icon"><i class="fas fa-laptop"></i></div><div class="completed-info"><h3>Digital Classrooms for 50 Schools</h3><p>Connected 50 schools in rural Bangladesh to digital learning platforms and the internet.</p><span class="completed-badge">✓ $95K Raised</span></div></div>
+      <div class="completed-card" data-aos="fade-up" data-aos-delay="160"><div class="completed-icon"><i class="fas fa-baby"></i></div><div class="completed-info"><h3>Maternal Health — Rural Uganda</h3><p>Trained 200 community midwives and established 12 birthing centres in remote Uganda.</p><span class="completed-badge">✓ $140K Raised</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter"><div class="container"><div class="newsletter-inner">
+  <div class="newsletter-text"><h2>Never Miss a Campaign</h2><p>Get notified when new campaigns launch and impact reports are published.</p></div>
+  <form class="newsletter-form" data-form="newsletter"><input type="email" placeholder="Your email address" required /><button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i>Subscribe</button></form>
+</div></div></section>
+<footer><div class="container">
+  <div class="footer-grid"><div class="footer-brand"><a href="index.html" class="nav-logo"><i class="fas fa-seedling"></i><span>STACKLY</span></a><p>Working to create a world where every person has access to education, healthcare, and opportunity.</p><div class="footer-social"><a href="index.html" class="social-btn"><i class="fab fa-facebook-f"></i></a><a href="index.html" class="social-btn"><i class="fab fa-twitter"></i></a><a href="index.html" class="social-btn"><i class="fab fa-instagram"></i></a><a href="index.html" class="social-btn"><i class="fab fa-linkedin-in"></i></a></div></div>
+  <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="campaigns.html">Campaigns</a></li><li><a href="campaigns.html">Volunteer</a></li></ul></div>
+  <div class="footer-col"><h4>Programs</h4><ul><li><a href="services.html">Education</a></li><li><a href="services.html">Healthcare</a></li><li><a href="services.html">Women</a></li><li><a href="services.html">Environment</a></li><li><a href="services.html">Emergency</a></li></ul></div>
+  <div class="footer-col"><h4>Contact</h4><ul><li><a href="about.html">Geneva, Switzerland</a></li><li><a href="about.html">hello@stackly.org</a></li><li><a href="login.html">Staff Login</a></li></ul></div></div>
+  <div class="footer-bottom"><p>© 2025 STACKLY. All rights reserved.</p><div class="footer-bottom-links"><a href="index.html">Privacy</a><a href="index.html">Terms</a></div></div>
+</div></footer>
+<script src="main.js"></script>
+<script src="enhancements.js"></script>
+<script>
+document.querySelectorAll('.amount-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+</script>
+
+<!-- FLOATING DONATE WIDGET -->
+<div id="floating-donate" style="position:fixed;bottom:32px;right:28px;z-index:9000;display:flex;flex-direction:column;align-items:flex-end;gap:10px">
+  <div class="float-donate-card">
+    <div class="fdc-title">Quick Donate 💚</div>
+    <div class="fdc-amounts">
+      <button class="fdc-amt" onclick="selectAmt(this,'10')">$10</button>
+      <button class="fdc-amt active" onclick="selectAmt(this,'25')">$25</button>
+      <button class="fdc-amt" onclick="selectAmt(this,'50')">$50</button>
+      <button class="fdc-amt" onclick="selectAmt(this,'100')">$100</button>
+    </div>
+    <a href="campaigns.html" class="fdc-cta" id="fdc-cta">Donate $25 Now</a>
+  </div>
+  <div class="float-donate-btn-wrap">
+    <span class="float-donate-pulse"></span>
+    <a href="campaigns.html" class="float-donate-btn"><i class="fas fa-heart"></i> Donate Now</a>
+  </div>
+</div>
+<script>
+(function(){const bar=document.getElementById('scroll-progress');if(!bar)return;window.addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=(window.scrollY/h*100)+'%';},{passive:true});})();
+function selectAmt(el,val){document.querySelectorAll('.fdc-amt').forEach(b=>b.classList.remove('active'));el.classList.add('active');document.getElementById('fdc-cta').textContent='Donate $'+val+' Now';}
+(function(){const w=document.getElementById('floating-donate'),footer=document.querySelector('footer');if(!w||!footer)return;new IntersectionObserver(e=>{w.style.opacity=e[0].isIntersecting?'0':'1';w.style.pointerEvents=e[0].isIntersecting?'none':'';},{threshold:0.1}).observe(footer);})();
+</script>
+
+</body>
+</html>

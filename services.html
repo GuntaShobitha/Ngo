@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services — STACKLY</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="enhancements.css" />
+  <link rel="stylesheet" href="wow.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .service-block { padding:100px 0; }
+    .service-block:nth-child(even) { background:var(--bg-secondary); }
+    .service-inner { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+    .service-block:nth-child(even) .service-inner { direction:rtl; }
+    .service-block:nth-child(even) .service-text { direction:ltr; }
+    .service-block:nth-child(even) .service-visual { direction:ltr; }
+    .service-visual { background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:20px; min-height:360px; display:flex; align-items:center; justify-content:center; font-size:7rem; color:var(--accent); opacity:0.18; }
+    .service-features { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:24px; }
+    .service-feat { display:flex; align-items:flex-start; gap:10px; padding:14px; background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:10px; }
+    .service-feat i { color:var(--accent); margin-top:2px; font-size:0.85rem; flex-shrink:0; }
+    .service-feat span { font-size:0.82rem; color:var(--text-secondary); line-height:1.5; }
+    .impact-row { display:flex; gap:32px; flex-wrap:wrap; margin-top:28px; }
+    .impact-item { }
+    .impact-num { font-family:'Syne',sans-serif; font-size:1.6rem; font-weight:800; color:var(--accent); }
+    .impact-label { font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em; }
+    @media(max-width:1024px){ .service-inner{grid-template-columns:1fr;direction:ltr!important;gap:40px;} .service-visual{min-height:250px;} }
+    @media(max-width:768px){ .service-features{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+<div id="page-loader"><div class="loader-inner"><div class="loader-logo">STACKLY</div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div></div>
+<nav class="navbar" id="navbar"><div class="container"><div class="nav-inner">
+  <a href="index.html" class="nav-logo"><i class="fas fa-seedling"></i><span>STACKLY</span></a>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html" class="active">Services</a></li><li><a href="campaigns.html">Campaigns</a></li><li><a href="about.html">Blog</a></li><li><a href="campaigns.html">Volunteer</a></li><li><a href="about.html">Contact</a></li></ul>
+  <div class="nav-actions"><a href="login.html" class="btn-nav-login">Login</a><a href="campaigns.html" class="btn-donate">Donate Now</a></div>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</div></div></nav>
+<div class="mobile-menu" id="mobileMenu"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="campaigns.html">Campaigns</a><a href="about.html">Blog</a><a href="campaigns.html">Volunteer</a><a href="about.html">Contact</a><a href="login.html">Login</a><a href="campaigns.html" class="btn-donate">Donate Now</a></div>
+
+<section class="page-hero">
+  <span class="section-label">What We Do</span>
+  <h1>Our <span style="color:var(--accent)">Services</span></h1>
+  <p>Five core program areas, each designed to address root causes of poverty and inequality — not just the symptoms.</p>
+  <div class="breadcrumb"><a href="index.html">Home</a><i class="fas fa-chevron-right" style="font-size:0.65rem"></i><span>Services</span></div>
+</section>
+
+<!-- EDUCATION -->
+<div class="service-block">
+  <div class="container"><div class="service-inner">
+    <div class="service-visual" data-aos="fade-right"><i class="fas fa-graduation-cap"></i></div>
+    <div class="service-text" data-aos="fade-left">
+      <span class="section-label">Program 01</span>
+      <h2 class="section-title">Education Programs</h2>
+      <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:16px">We believe education is the most powerful tool for breaking the cycle of poverty. Our education programs reach children and adults in 24 countries, providing quality learning environments, trained teachers, and digital resources.</p>
+      <div class="service-features">
+        <div class="service-feat"><i class="fas fa-check"></i><span>School construction & renovation</span></div>
+        <div class="service-feat"><i class="fas fa-check"></i><span>Teacher training programs</span></div>
+        <div class="service-feat"><i class="fas fa-check"></i><span>Digital literacy centers</span></div>
+        <div class="service-feat"><i class="fas fa-check"></i><span>Scholarship funding</span></div>
+        <div class="service-feat"><i class="fas fa-check"></i><span>Adult literacy classes</span></div>
+        <div class="service-feat"><i class="fas fa-check"></i><span>Girls' education initiatives</span></div>
+      </div>
+      <div class="impact-row">
+        <div class="impact-item"><div class="impact-num" data-counter data-target="86000">0</div><div class="impact-label">Students Enrolled</div></div>
+        <div class="impact-item"><div class="impact-num" data-counter data-target="240">0</div><div class="impact-label">Schools Built</div></div>
+        <div class="impact-item"><div class="impact-num" data-counter data-target="3200">0</div><div class="impact-label">Teachers Trained</div></div>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<!-- HEALTHCARE -->
+<div class="service-block">
+  <div class="container"><div class="service-inner">
+    <div class="service-visual" data-aos="fade-left"><i class="fas fa-heartbeat"></i></div>
+    <div class="service-text" data-aos="fade-right">
+      <span class="section-label">Program 02</span>
+      <h2 class="section-title">Healthcare Programs</h2>
+      <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:16px">Our healthcare team deploys mobile clinics, trains community health workers, and runs maternal health programs that have dramatically reduced child mortality in our target regions.</p>
+      <div class="service-features">
+        <div class="service-feat"><i class="fas fa-check"></i><span>Mobile medical clinics</span></div>
+        <div class="service-feat"><i class="fas fa-check"></i><span>Vaccination drives</span></div>
+        <div class="service-feat"><i class="fas fa-check"></i><span>Maternal & child health</span></div>
+        <div class="service-feat"><i class="fas fa-check"></i><span>HIV/AIDS prevention</span></div>
+        <div class="service-feat"><i class="fas fa-check"></i><span>Mental health support</span></div>
+        <div class="service-feat"><i class="fas fa-check"></i><span>Nutrition programs</span></div>
+      </div>
+      <div class="impact-row">
+        <div class="impact-item"><div class="impact-num" data-counter data-target="145000">0</div><div class="impact-label">Patients Treated</div></div>
+        <div class="impact-item"><div class="impact-num" data-counter data-target="62">0</div><div class="impact-label">Mobile Clinics</div></div>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<!-- COMMUNITY DEVELOPMENT / WOMEN -->
+<div class="service-block">
+  <div class="container"><div class="service-inner">
+    <div class="service-visual" data-aos="fade-right"><i class="fas fa-female"></i></div>
+    <div class="service-text" data-aos="fade-left">
+      <span class="section-label">Program 03</span>
+      <h2 class="section-title">Women Empowerment</h2>
+      <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:16px">Gender equality is central to sustainable development. Our women's programs provide economic tools, safe spaces, legal support, and platforms for women to lead their own communities.</p>
+      <div class="service-features">
+        <div class="service-feat"><i class="fas fa-check"></i><span>Microfinance & savings groups</span></div>
+        <div class="service-feat"><i class="fas fa-check"></i><span>Vocational skills training</span></div>
+        <div class="service-feat"><i class="fas fa-check"></i><span>Legal rights education</span></div>
+        <div class="service-feat"><i class="fas fa-check"></i><span>Gender-based violence support</span></div>
+        <div class="service-feat"><i class="fas fa-check"></i><span>Leadership development</span></div>
+        <div class="service-feat"><i class="fas fa-check"></i><span>Women-owned business grants</span></div>
+      </div>
+      <div class="impact-row">
+        <div class="impact-item"><div class="impact-num" data-counter data-target="28000">0</div><div class="impact-label">Women Supported</div></div>
+        <div class="impact-item"><div class="impact-num" data-counter data-target="1400">0</div><div class="impact-label">Businesses Started</div></div>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<!-- ENVIRONMENT -->
+<div class="service-block">
+  <div class="container"><div class="service-inner">
+    <div class="service-visual" data-aos="fade-left"><i class="fas fa-leaf"></i></div>
+    <div class="service-text" data-aos="fade-right">
+      <span class="section-label">Program 04</span>
+      <h2 class="section-title">Environment Projects</h2>
+      <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:16px">Climate change disproportionately affects the world's poorest communities. Our environment programs restore ecosystems, provide clean energy, and build climate resilience where it's needed most.</p>
+      <div class="service-features">
+        <div class="service-feat"><i class="fas fa-check"></i><span>Large-scale reforestation</span></div>
+        <div class="service-feat"><i class="fas fa-check"></i><span>Solar energy installation</span></div>
+        <div class="service-feat"><i class="fas fa-check"></i><span>Clean water systems</span></div>
+        <div class="service-feat"><i class="fas fa-check"></i><span>Sustainable farming training</span></div>
+        <div class="service-feat"><i class="fas fa-check"></i><span>Plastic waste reduction</span></div>
+        <div class="service-feat"><i class="fas fa-check"></i><span>Climate education programs</span></div>
+      </div>
+      <div class="impact-row">
+        <div class="impact-item"><div class="impact-num" data-counter data-target="850000">0</div><div class="impact-label">Trees Planted</div></div>
+        <div class="impact-item"><div class="impact-num" data-counter data-target="50">0</div><div class="impact-label">Villages with Clean Water</div></div>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<!-- EMERGENCY RELIEF -->
+<div class="service-block">
+  <div class="container"><div class="service-inner">
+    <div class="service-visual" data-aos="fade-right"><i class="fas fa-hand-holding-heart"></i></div>
+    <div class="service-text" data-aos="fade-left">
+      <span class="section-label">Program 05</span>
+      <h2 class="section-title">Emergency Relief</h2>
+      <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:16px">When disaster strikes — floods, earthquakes, conflict, drought — STACKLY deploys rapid response teams within 72 hours. We provide immediate relief and stay to support long-term recovery.</p>
+      <div class="service-features">
+        <div class="service-feat"><i class="fas fa-check"></i><span>Rapid response deployment</span></div>
+        <div class="service-feat"><i class="fas fa-check"></i><span>Emergency food & water</span></div>
+        <div class="service-feat"><i class="fas fa-check"></i><span>Temporary shelter</span></div>
+        <div class="service-feat"><i class="fas fa-check"></i><span>Medical emergency care</span></div>
+        <div class="service-feat"><i class="fas fa-check"></i><span>Psychosocial support</span></div>
+        <div class="service-feat"><i class="fas fa-check"></i><span>Long-term rebuilding</span></div>
+      </div>
+      <div class="impact-row">
+        <div class="impact-item"><div class="impact-num" data-counter data-target="47">0</div><div class="impact-label">Emergencies Responded</div></div>
+        <div class="impact-item"><div class="impact-num" data-counter data-target="92000">0</div><div class="impact-label">People Reached</div></div>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<!-- CTA -->
+<section style="padding:80px 0;text-align:center;background:var(--bg-secondary);">
+  <div class="container"><div data-aos="fade-up">
+    <span class="section-label">Get Involved</span>
+    <h2 class="section-title" style="margin-bottom:20px">Ready to Make a Difference?</h2>
+    <p class="section-subtitle" style="margin:0 auto 36px">Every donation, every volunteer hour, every shared post amplifies our impact.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="campaigns.html" class="btn-primary"><i class="fas fa-heart"></i>Donate Now</a>
+      <a href="campaigns.html" class="btn-outline"><i class="fas fa-hands-helping"></i>Volunteer</a>
+    </div>
+  </div></div>
+</section>
+
+<section class="newsletter"><div class="container"><div class="newsletter-inner">
+  <div class="newsletter-text"><h2>Stay in the Loop</h2><p>Monthly updates on our impact and programs.</p></div>
+  <form class="newsletter-form" data-form="newsletter"><input type="email" placeholder="Your email address" required /><button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i>Subscribe</button></form>
+</div></div></section>
+
+<footer><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a href="index.html" class="nav-logo"><i class="fas fa-seedling"></i><span>STACKLY</span></a><p>Working to create a world where every person has access to education, healthcare, and opportunity.</p><div class="footer-social"><a href="index.html" class="social-btn"><i class="fab fa-facebook-f"></i></a><a href="index.html" class="social-btn"><i class="fab fa-twitter"></i></a><a href="index.html" class="social-btn"><i class="fab fa-instagram"></i></a><a href="index.html" class="social-btn"><i class="fab fa-linkedin-in"></i></a></div></div>
+    <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="campaigns.html">Campaigns</a></li><li><a href="campaigns.html">Volunteer</a></li></ul></div>
+    <div class="footer-col"><h4>Programs</h4><ul><li><a href="services.html">Education</a></li><li><a href="services.html">Healthcare</a></li><li><a href="services.html">Women Empowerment</a></li><li><a href="services.html">Environment</a></li><li><a href="services.html">Emergency Relief</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="about.html">Geneva, Switzerland</a></li><li><a href="about.html">hello@stackly.org</a></li><li><a href="login.html">Staff Login</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 STACKLY. All rights reserved.</p><div class="footer-bottom-links"><a href="index.html">Privacy</a><a href="index.html">Terms</a></div></div>
+</div></footer>
+<script src="main.js"></script>
+<script src="enhancements.js"></script>
+
+<!-- FLOATING DONATE WIDGET -->
+<div id="floating-donate" style="position:fixed;bottom:32px;right:28px;z-index:9000;display:flex;flex-direction:column;align-items:flex-end;gap:10px">
+  <div class="float-donate-card">
+    <div class="fdc-title">Quick Donate 💚</div>
+    <div class="fdc-amounts">
+      <button class="fdc-amt" onclick="selectAmt(this,'10')">$10</button>
+      <button class="fdc-amt active" onclick="selectAmt(this,'25')">$25</button>
+      <button class="fdc-amt" onclick="selectAmt(this,'50')">$50</button>
+      <button class="fdc-amt" onclick="selectAmt(this,'100')">$100</button>
+    </div>
+    <a href="campaigns.html" class="fdc-cta" id="fdc-cta">Donate $25 Now</a>
+  </div>
+  <div class="float-donate-btn-wrap">
+    <span class="float-donate-pulse"></span>
+    <a href="campaigns.html" class="float-donate-btn"><i class="fas fa-heart"></i> Donate Now</a>
+  </div>
+</div>
+<script>
+(function(){const bar=document.getElementById('scroll-progress');if(!bar)return;window.addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=(window.scrollY/h*100)+'%';},{passive:true});})();
+function selectAmt(el,val){document.querySelectorAll('.fdc-amt').forEach(b=>b.classList.remove('active'));el.classList.add('active');document.getElementById('fdc-cta').textContent='Donate $'+val+' Now';}
+(function(){const w=document.getElementById('floating-donate'),footer=document.querySelector('footer');if(!w||!footer)return;new IntersectionObserver(e=>{w.style.opacity=e[0].isIntersecting?'0':'1';w.style.pointerEvents=e[0].isIntersecting?'none':'';},{threshold:0.1}).observe(footer);})();
+</script>
+
+</body>
+</html>
