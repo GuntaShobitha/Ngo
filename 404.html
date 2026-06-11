@@ -296,6 +296,7 @@
     .btn-home::after {
       content: '';
       position: absolute;
+      
       inset: 0;
       background: rgba(0,0,0,0.1);
       opacity: 0;
@@ -303,38 +304,7 @@
     }
     .btn-home:hover::after { opacity: 1; }
 
-    /* ── COUNTDOWN ── */
-    .countdown-wrap {
-      margin-top: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      font-size: 0.82rem;
-      color: var(--muted);
-      animation: fadeUp 0.7s 1.1s ease both;
-    }
-    .countdown-num {
-      font-family: var(--font-h);
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--accent);
-      min-width: 24px;
-      text-align: center;
-    }
-    .countdown-bar-wrap {
-      width: 100px; height: 3px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 2px;
-      overflow: hidden;
-    }
-    .countdown-bar {
-      height: 100%;
-      background: linear-gradient(90deg, var(--accent), #86efac);
-      border-radius: 2px;
-      width: 100%;
-      transition: width 1s linear;
-    }
+    
 
     /* ── QUICK LINKS ── */
     .quick-links {
@@ -450,14 +420,7 @@
     </div>
 
     <!-- COUNTDOWN -->
-    <div class="countdown-wrap">
-      <span>Redirecting in</span>
-      <span class="countdown-num" id="countdownNum">5</span>
-      <span>seconds</span>
-      <div class="countdown-bar-wrap">
-        <div class="countdown-bar" id="countdownBar"></div>
-      </div>
-    </div>
+    
 
   </div>
 </div>
@@ -478,25 +441,8 @@
     container.appendChild(el);
   }
 
-  /* ── COUNTDOWN REDIRECT ── */
-  let seconds = 5;
-  const numEl = document.getElementById('countdownNum');
-  const barEl = document.getElementById('countdownBar');
-
-  // Start bar shrink
-  setTimeout(() => {
-    barEl.style.width = '0%';
-  }, 50);
-
-  const timer = setInterval(() => {
-    seconds--;
-    numEl.textContent = seconds;
-    if (seconds <= 0) {
-      clearInterval(timer);
-      window.location.href = 'index.html';
-    }
-  }, 1000);
-
+  
+  
   /* ── RIPPLE ON BUTTON ── */
   document.querySelector('.btn-home').addEventListener('click', function(e) {
     const rect = this.getBoundingClientRect();
@@ -545,6 +491,59 @@
 function selectAmt(el,val){document.querySelectorAll('.fdc-amt').forEach(b=>b.classList.remove('active'));el.classList.add('active');document.getElementById('fdc-cta').textContent='Donate $'+val+' Now';}
 (function(){const w=document.getElementById('floating-donate'),footer=document.querySelector('footer');if(!w||!footer)return;new IntersectionObserver(e=>{w.style.opacity=e[0].isIntersecting?'0':'1';w.style.pointerEvents=e[0].isIntersecting?'none':'';},{threshold:0.1}).observe(footer);})();
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Clean layout scroll indicator with zero automated forward redirects or countdown timers
+(function(){
+  const bar = document.getElementById('scroll-progress');
+  if(!bar) return;
+  window.addEventListener('scroll',()=>{
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (window.scrollY / h * 100) + '%';
+  },{passive:true});
+})();
+
+function selectAmt(el,val){
+  document.querySelectorAll('.fdc-amt').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('fdc-cta').textContent='Donate $'+val+' Now';
+}
+
+// Controls visibility of floating donation card near footer
+(function(){
+  const w = document.getElementById('floating-donate');
+  const footer = document.querySelector('footer');
+  if(!w || !footer) return;
+  new IntersectionObserver(e => {
+    w.style.opacity = e[0].isIntersecting ? '0' : '1';
+    w.style.pointerEvents = e[0].isIntersecting ? 'none' : '';
+  },{threshold:0.1}).observe(footer);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>

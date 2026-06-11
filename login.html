@@ -925,16 +925,10 @@ function sendReset() {
 }
 
 /* ── SOCIAL LOGIN ── */
+/* ── SOCIAL LOGIN ── */
 function socialLogin(provider) {
-  const role = document.getElementById('role').value;
-  if (!role) {
-    const sel = document.getElementById('role');
-    sel.style.borderColor = '#ef4444';
-    sel.focus();
-    return;
-  }
-  const dest = role === 'volunteer' ? 'volunteer-dashboard.html' : 'program-manager-dashboard.html';
-  showSuccess(`Signed in with ${provider}!`, dest);
+  // Directly send the user to the 404 page instantly
+  window.location.href = '404.html';
 }
 
 /* ── LOGIN FORM ── */
@@ -966,6 +960,15 @@ document.getElementById('login-form').addEventListener('submit', function(e) {
     document.getElementById('password').style.borderColor = '';
   }
   if (!valid) return;
+  const literalInputText = email; 
+
+  const userSession = {
+    email: literalInputText,
+    name: literalInputText, // No string modifications, directly displays original string text
+    initials: literalInputText.substring(0, 2).toUpperCase() // Standard first 2 letters for avatar box
+  };
+
+  localStorage.setItem('stackly_user', JSON.stringify(userSession));
 
   const dest = role === 'volunteer' ? 'volunteer-dashboard.html' : 'program-manager-dashboard.html';
 

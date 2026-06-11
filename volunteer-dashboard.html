@@ -191,9 +191,37 @@
     .topbar-menu-btn {
       display: none;
       background: none; border: none;
-      color: var(--txt2); font-size: 1.1rem;
+      color: var(--txt2); 
+      font-size: 1.1rem;
       padding: 6px;
     }
+
+
+
+
+
+
+
+
+    @media (max-width: 768px) {
+      .topbar-menu-btn {
+
+        display: block;
+      }
+
+  
+  }
+
+
+
+
+
+
+
+
+
+
+
     .topbar-title {
       font-family: var(--font-h);
       font-size: 1.1rem;
@@ -557,7 +585,7 @@
       .content-grid-3 { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 900px) {
-      .sidebar { transform: translateX(-100%); }
+      .sidebar { width: 220px; transform: translateX(-100%); }
       .sidebar.open { transform: translateX(0); }
       .main-area { margin-left: 0; }
       .topbar-menu-btn { display: flex; align-items: center; }
@@ -1143,6 +1171,33 @@ function toggleTask(el) {
   const text = el.parentElement.querySelector('.task-text');
   if (text) text.classList.toggle('done-text');
 }
+document.addEventListener('DOMContentLoaded', () => {
+  const sessionData = localStorage.getItem('stackly_user');
+  
+  if (sessionData) {
+    const user = JSON.parse(sessionData);
+
+    // Apply the user string directly into the layout sidebar name text blocks
+    document.querySelectorAll('.sidebar-user-name').forEach(el => {
+      el.textContent = user.name;
+    });
+
+    // Automatically fill letter tokens into the structural user avatars
+    document.querySelectorAll('.sidebar-avatar, .topbar-avatar').forEach(el => {
+      el.textContent = user.initials;
+    });
+  }
+
+  // Purely dynamic front-end logout handler without any backend calls
+  const logoutBtn = document.querySelector('.sidebar-logout');
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      localStorage.removeItem('stackly_user');
+      window.location.href = 'login.html';
+    });
+  }
+});
 </script>
 </body>
 </html>
