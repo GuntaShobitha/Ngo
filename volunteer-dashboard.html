@@ -55,7 +55,7 @@
       position: fixed;
       top: 0; left: 0;
       height: 100vh;
-      z-index: 100;
+      z-index: 1000;
       transition: transform 0.3s ease;
     }
     .sidebar-logo {
@@ -186,7 +186,7 @@
       gap: 16px;
       position: sticky;
       top: 0;
-      z-index: 50;
+      z-index: 100;
     }
     .topbar-menu-btn {
       display: none;
@@ -227,7 +227,84 @@
       font-size: 1.1rem;
       font-weight: 700;
       color: var(--txt);
-    }
+    } 
+
+
+    
+
+
+
+@media (max-width: 900px) {
+
+  .topbar {
+    gap: 8px;
+    padding: 0 10px;
+  }
+
+  .topbar-title {
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+
+  .topbar-right {
+    gap: 6px;
+  }
+
+  .topbar-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .topbar-avatar {
+    width: 34px;
+    height: 34px;
+    font-size: 0.8rem;
+  }
+
+  .page-title {
+    font-size: 2rem;
+    word-break: break-word;
+  }
+
+  .campaign-name {
+    white-space: normal;
+  }
+
+  .event-meta {
+    flex-wrap: wrap;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     .topbar-right { margin-left: auto; display: flex; align-items: center; gap: 12px; }
     .topbar-btn {
       position: relative;
@@ -575,7 +652,7 @@
       display: none;
       position: fixed; inset: 0;
       background: rgba(0,0,0,0.6);
-      z-index: 99;
+      z-index: 999;
     }
     .sidebar-overlay.show { display: block; }
 
@@ -585,15 +662,74 @@
       .content-grid-3 { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 900px) {
-      .sidebar { width: 220px; transform: translateX(-100%); }
-      .sidebar.open { transform: translateX(0); }
-      .main-area { margin-left: 0; }
-      .topbar-menu-btn { display: flex; align-items: center; }
-      .topbar { padding: 0 20px; }
-      .page-content { padding: 20px; }
-      .content-grid { grid-template-columns: 1fr; }
-      .content-grid-3 { grid-template-columns: 1fr; }
-    }
+
+      .sidebar {
+        width: 220px;
+        transform: translateX(-100%);
+        z-index: 1000;
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+        z-index: 1000;
+      }
+
+      .main-area {
+        margin-left: 0;
+      }
+      .topbar-menu-btn {
+        display: flex;
+        align-items: center;
+      } 
+      .topbar {
+        padding: 0 20px;
+      } 
+      .page-content {
+        padding: 20px;
+        width: 100%;
+        overflow-x: hidden;
+      } 
+      .content-grid {
+        grid-template-columns: 1fr;
+      } 
+      .content-grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+    
+
+  .sidebar.open {
+    transform: translateX(0);
+    z-index: 1000;
+  }
+
+  .main-area {
+    margin-left: 0;
+  }
+
+  .topbar-menu-btn {
+    display: flex;
+    align-items: center;
+  }
+
+  .topbar {
+    padding: 0 20px;
+  }
+
+  .page-content {
+    padding: 20px;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .content-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
     @media (max-width: 600px) {
       .stats-grid { grid-template-columns: 1fr 1fr; }
       .profile-card { flex-wrap: wrap; }
@@ -612,7 +748,7 @@
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-logo">
       <i class="fas fa-seedling"></i>STACKLY
-      <span class="sidebar-badge">Volunteer</span>
+      <!-- <span class="sidebar-badge">Volunteer</span> -->
     </div>
     <nav class="sidebar-nav">
       <div class="nav-section-label">Main</div>
