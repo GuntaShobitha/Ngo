@@ -1454,24 +1454,42 @@ body {
 * {
   box-sizing: border-box;
 }
+@media (max-width: 450px) {
+  .hero-inner {
+    width: 300px;
+    
+  }
+  .hero-title{
+    font-height: 20px;
+  }
+  .hero-content {
+    width: 300px
+  }
+
+ 
+} 
+
+ .smal-screen-size-button {
+    width: 250px;
+  }
 
 @media (max-width: 768px) {
 
   .container,
   .hero-container,
-  .hero-content,
+  
   .navbar,
   .nav-inner {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+    width: 100% ;
+    max-width: 100% ;
+    margin: 0 ;
+    padding-left: 20px ;
+    padding-right: 20px ;
   }
 
   .hero-title {
-    font-size: 2.5rem !important;
-    line-height: 1.1 !important;
+    font-size: 2.5rem ;
+    line-height: 1.1 ;
   }
 
   .hero-buttons {
@@ -1481,5 +1499,121 @@ body {
 
   .hero-buttons .btn {
     width: 100% !important;
+  }
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== MOBILE HERO FIX ===== */
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: auto;
+    padding: 40px 0;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-desc {
+    max-width: 100%;
+    margin: 0 auto 24px;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+    line-height: 1.15;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .hero-actions a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-stats {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .hero-stat-item {
+    text-align: center;
+  }
+
+  .hero-img-placeholder {
+    min-height: 280px;
+  }
+
+  .hero-img-placeholder i {
+    font-size: 4rem;
+  }
+
+  .hero-floating-card {
+    position: static;
+    margin-top: 12px;
+    width: 100%;
+  }
+
+  .hero-floating-card.card1,
+  .hero-floating-card.card2 {
+    animation: none;
+  }
+} 
+
+
+
+
+
+
+
+
+@media (max-width: 480px) {
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-label {
+    font-size: 0.65rem;
+    padding: 5px 10px;
+  }
+
+  .hero-stat-num {
+    font-size: 1.2rem;
+  }
+
+  .hero-desc {
+    font-size: 0.9rem;
+  }
+  .hero-actions {
+    justify-content: center;
+    align-items: center;
+  
   }
 }

@@ -346,7 +346,53 @@
     }
     @media (max-width: 400px) {
       .stats-grid { grid-template-columns: 1fr; }
+    } 
+
+
+    @media (max-width: 450px) {
+  .page-content {
+    width: 300px;
+
+  } 
+  .card-body{
+    overflow-x: auto;
+
+  }
+}
+ 
+
+
+
+@media (max-width: 768px){
+
+    .profile-name{
+        font-size: 1.3rem !important;
+        line-height: 1.3;
+        word-break: break-word;
+        overflow-wrap: break-word;
     }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </style>
 </head>
 <body>
@@ -356,7 +402,7 @@
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-logo">
       <i class="fas fa-seedling"></i>STACKLY
-      <span class="sidebar-badge">Prog. Mgr</span>
+      
     </div>
     <nav class="sidebar-nav">
       <div class="nav-section-label">Main</div>
@@ -413,7 +459,7 @@
   <div class="main-area">
     <header class="topbar">
       <button class="topbar-menu-btn" onclick="openSidebar()"><i class="fas fa-bars"></i></button>
-      <div class="topbar-title" id="topbar-title">Program Overview</div>
+       <div class="topbar-title" id="topbar-title"></div> 
       <div class="topbar-right">
         <button class="topbar-btn" onclick="openNotif()" title="Notifications">
           <i class="fas fa-bell"></i>
@@ -429,7 +475,7 @@
       <!-- ═══ OVERVIEW ═══ -->
       <section id="section-overview">
         <div class="page-header">
-          <h1 class="page-title">Welcome, Sarah 📊</h1>
+          <h1 class="page-title">Welcome 📊</h1>
           <p class="page-subtitle">Program dashboard — <span id="pm-live-date"></span></p>
         </div>
 
@@ -640,9 +686,9 @@
       <section id="section-profile" style="display:none">
         <div class="page-header"><h1 class="page-title">My Profile</h1><p class="page-subtitle">Program Manager profile and settings</p></div>
         <div class="profile-card">
-          <div class="profile-avatar-lg">SM</div>
+          <div class="profile-avatar-lg" id="profileAvatar"></div>
           <div class="profile-info">
-            <div class="profile-name">Sarah Mitchell</div>
+            <div class="profile-name" id="profileName"></div>
             <div class="profile-role-tag"><i class="fas fa-user-tie"></i> Program Manager</div>
             <div class="profile-stats-row">
               <div class="profile-stat"><div class="profile-stat-num">8</div><div class="profile-stat-label">Campaigns</div></div>
@@ -657,7 +703,7 @@
           <div class="dash-card">
             <div class="card-head"><div class="card-head-title"><i class="fas fa-user"></i>Personal Info</div></div>
             <div class="card-body">
-              <div class="row-item"><div class="row-info"><div class="row-name">Email</div><div class="row-meta">sarah.mitchell@stackly.org</div></div></div>
+              <div class="row-item"><div class="row-info"><div class="row-name">Email</div><div class="row-meta" id="profileEmail"></div></div></div>
               <div class="row-item"><div class="row-info"><div class="row-name">Phone</div><div class="row-meta">+1 (555) 234-5678</div></div></div>
               <div class="row-item"><div class="row-info"><div class="row-name">Location</div><div class="row-meta">Nairobi, Kenya</div></div></div>
               <div class="row-item"><div class="row-info"><div class="row-name">Department</div><div class="row-meta">Programs & Partnerships</div></div></div>
@@ -765,7 +811,7 @@ function showSection(name) {
   const titleWord = titles[name].split(' ')[0].toLowerCase();
   const activeBtn = [...document.querySelectorAll('.nav-item')].find(b => b.textContent.toLowerCase().includes(titleWord));
   if (activeBtn) activeBtn.classList.add('active');
-  document.getElementById('topbar-title').textContent = titles[name] || name;
+  <!-- document.getElementById('topbar-title').textContent = titles[name] || name; -->
   closeSidebar();
 }
 
@@ -824,7 +870,73 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = 'login.html';
     });
   }
-});
+}); 
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const user = JSON.parse(localStorage.getItem("stackly_user"));
+
+    if(user){
+
+        const profileName = document.getElementById("profileName");
+        const profileEmail = document.getElementById("profileEmail");
+        const profileAvatar = document.getElementById("profileAvatar");
+        if(profileName){
+            profileName.textContent = user.name;
+        }
+
+        if(profileEmail){
+            profileEmail.textContent = user.email;
+        } 
+
+        if(profileAvatar){
+            profileAvatar.textContent = user.initials;
+        }
+
+
+    }
+
+}); 
+
+const profileAvatar = document.getElementById("profileAvatar");
+
+if(profileAvatar){
+    profileAvatar.textContent = user.initials;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 </body>
 </html>

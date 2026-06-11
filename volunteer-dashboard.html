@@ -196,7 +196,16 @@
       padding: 6px;
     }
 
+  @media (max-width: 768px){
 
+    .profile-name{
+        font-size: 1.3rem !important;
+        line-height: 1.3;
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+
+}
 
 
 
@@ -730,6 +739,24 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+
+
+@media (max-width: 450px) {
+  .page-content {
+    width: 300px;
+  }
+}
+
+
+
+
+
+
+
+
+
     @media (max-width: 600px) {
       .stats-grid { grid-template-columns: 1fr 1fr; }
       .profile-card { flex-wrap: wrap; }
@@ -739,7 +766,7 @@
     @media (max-width: 400px) {
       .stats-grid { grid-template-columns: 1fr; }
     }
-  </style>
+  </style> 
 </head>
 <body>
 <div class="dash-wrap">
@@ -821,7 +848,7 @@
       <!-- ═══ SECTION: OVERVIEW ═══ -->
       <section id="section-overview">
         <div class="page-header">
-          <h1 class="page-title">Welcome back, Alex 👋</h1>
+          <h1 class="page-title">Welcome back 👋</h1>
           <p class="page-subtitle">Here's your volunteering summary — <span id="vol-live-date"></span></p>
         </div>
 
@@ -1151,9 +1178,12 @@
           <p class="page-subtitle">Manage your volunteer profile and information</p>
         </div>
         <div class="profile-card">
-          <div class="profile-avatar-lg">AK</div>
+          <!-- <div class="profile-avatar-lg">AK</div> -->
+           <div class="profile-avatar-lg" id="profileAvatar"></div>
           <div class="profile-info">
-            <div class="profile-name">Alex Kumar</div>
+            <!-- <div class="profile-name">shoKumar</div> -->
+          <div class="profile-name" id="profileName"></div>
+
             <div class="profile-role-tag"><i class="fas fa-hand-holding-heart"></i> Volunteer</div>
             <div class="profile-stats-row">
               <div class="profile-stat"><div class="profile-stat-num">142</div><div class="profile-stat-label">Hours</div></div>
@@ -1168,7 +1198,7 @@
           <div class="dash-card">
             <div class="card-head"><div class="card-head-title"><i class="fas fa-user"></i>Personal Info</div></div>
             <div class="card-body">
-              <div class="campaign-item"><div class="campaign-info"><div class="campaign-name">Email</div><div class="campaign-meta">alex.kumar@email.com</div></div></div>
+              <div class="campaign-item"><div class="campaign-info"><div class="campaign-name">Email</div><div class="campaign-meta" id="profileEmail"></div></div></div>
               <div class="campaign-item"><div class="campaign-info"><div class="campaign-name">Phone</div><div class="campaign-meta">+91 98765 43210</div></div></div>
               <div class="campaign-item"><div class="campaign-info"><div class="campaign-name">Location</div><div class="campaign-meta">Hyderabad, India</div></div></div>
               <div class="campaign-item"><div class="campaign-info"><div class="campaign-name">Languages</div><div class="campaign-meta">English, Hindi, Telugu</div></div></div>
@@ -1333,7 +1363,59 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = 'login.html';
     });
   }
-});
+}); 
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const user = JSON.parse(localStorage.getItem("stackly_user"));
+
+    if(user){
+
+        const profileName = document.getElementById("profileName");
+        const profileEmail = document.getElementById("profileEmail");
+        const profileAvatar = document.getElementById("profileAvatar");
+        if(profileName){
+            profileName.textContent = user.name;
+        }
+
+        if(profileEmail){
+            profileEmail.textContent = user.email;
+        } 
+
+        if(profileAvatar){
+            profileAvatar.textContent = user.initials;
+        }
+
+
+    }
+
+}); 
+
+const profileAvatar = document.getElementById("profileAvatar");
+
+if(profileAvatar){
+    profileAvatar.textContent = user.initials;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 </body>
-</html>
+</html> 
