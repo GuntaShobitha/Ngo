@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — STACKLY</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="enhancements.css" />
+  <link rel="stylesheet" href="wow.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .timeline { position: relative; padding-left: 40px; }
+    .timeline::before { content:''; position:absolute; left:10px; top:0; bottom:0; width:2px; background:var(--border-subtle); }
+    .timeline-item { position:relative; margin-bottom:40px; }
+    .timeline-dot { position:absolute; left:-36px; top:4px; width:16px; height:16px; background:var(--accent); border-radius:50%; border:3px solid var(--bg-primary); }
+    .timeline-year { font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:6px; }
+    .timeline-title { font-size:1rem; font-weight:700; margin-bottom:6px; }
+    .timeline-desc { color:var(--text-muted); font-size:0.85rem; line-height:1.6; }
+    .team-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:60px; }
+    .team-card { background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:var(--radius); padding:28px; text-align:center; transition:var(--transition); }
+    .team-card:hover { transform:translateY(-6px); border-color:var(--border); }
+    .team-avatar { width:80px; height:80px; background:var(--accent-glow); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; font-size:2rem; color:var(--accent); }
+    .team-name { font-size:1rem; font-weight:700; margin-bottom:4px; }
+    .team-role { font-size:0.78rem; color:var(--accent); font-weight:600; margin-bottom:10px; }
+    .team-bio { font-size:0.82rem; color:var(--text-muted); line-height:1.6; margin-bottom:14px; }
+    .team-social { display:flex; gap:8px; justify-content:center; }
+    .team-social a { width:30px; height:30px; background:var(--bg-secondary); border-radius:6px; display:flex; align-items:center; justify-content:center; color:var(--text-muted); font-size:0.78rem; transition:var(--transition); }
+    .team-social a:hover { color:var(--accent); background:var(--accent-glow); }
+    .partners-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:16px; margin-top:48px; }
+    .partner-logo { background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:10px; padding:20px; display:flex; align-items:center; justify-content:center; transition:var(--transition); }
+    .partner-logo:hover { border-color:var(--border); }
+    .partner-logo span { font-family:'Syne',sans-serif; font-size:0.85rem; font-weight:700; color:var(--text-muted); text-align:center; }
+    .mission-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-top:40px; }
+    .mission-card { background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:var(--radius); padding:32px; }
+    .mission-card-icon { width:52px; height:52px; background:var(--accent-glow); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; color:var(--accent); margin-bottom:20px; }
+    .mission-card h3 { font-size:1.1rem; margin-bottom:10px; }
+    .mission-card p { color:var(--text-muted); font-size:0.88rem; line-height:1.7; }
+    @media(max-width:1024px){ .team-grid{grid-template-columns:repeat(2,1fr);} .partners-grid{grid-template-columns:repeat(3,1fr);} }
+    @media(max-width:768px){ .mission-grid{grid-template-columns:1fr;} .partners-grid{grid-template-columns:repeat(2,1fr);} }
+    @media(max-width:480px){ .team-grid{grid-template-columns:1fr;} } 
+
+
+
+
+
+
+    .contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:start;
+}
+
+.contact-form-card{
+  background:var(--bg-card);
+  padding:30px;
+  border-radius:20px;
+  border:1px solid var(--border-subtle);
+}
+
+@media(max-width:768px){
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div id="page-loader"><div class="loader-inner"><div class="loader-logo">STACKLY</div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div></div>
+
+<nav class="navbar" id="navbar">
+  <div class="container"><div class="nav-inner">
+    <a href="index.html" class="nav-logo"><i class="fas fa-seedling"></i><span>STACKLY</span></a>
+    <ul class="nav-links">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="services.html">Services</a></li>
+  <li><a href="campaigns.html">Campaigns</a></li>
+  <li><a href="blog.html">Blog</a></li>
+  <li><a href="volunteer.html">Volunteer</a></li>
+  <li><a href="contact.html" class="active">Contact</a></li>
+</ul>
+    <div class="nav-actions"><a href="login.html" class="btn-nav-login">Login</a><a href="campaigns.html" class="btn-donate">Donate Now</a></div>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+  <a href="campaigns.html">Campaigns</a><a href="blog.html">Blog</a><a href="volunteer.html">Volunteer</a>
+  <a href="contact.html">Contact</a><a href="login.html">Login</a><a href="campaigns.html" class="btn-donate">Donate Now</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <span class="section-label">Get In Touch</span>
+  <h1>Contact <span style="color:var(--accent)">STACKLY</span></h1>
+  <p>We'd love to hear from you. Reach out for partnerships, volunteering, donations, or general inquiries.</p>
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <i class="fas fa-chevron-right" style="font-size:0.65rem"></i>
+    <span>Contact</span>
+  </div>
+</section> 
+
+
+
+
+
+
+
+
+
+
+
+
+<section style="padding:10px 0;">
+  <div class="container">
+
+    
+
+  
+
+  <input type="text" placeholder="Your Name"
+  style="width:100%;padding:14px;margin-bottom:15px;border-radius:10px;border:none;">
+
+  <input type="email" placeholder="Your Email"
+  style="width:100%;padding:14px;margin-bottom:15px;border-radius:10px;border:none;">
+
+  <textarea placeholder="Your Message"
+  style="width:100%;height:150px;padding:14px;margin-bottom:15px;border-radius:10px;border:none;"></textarea>
+
+  <button class="btn-primary">Send Message</button>
+
+  <hr style="margin:30px 0;opacity:.2;">
+
+  
+</div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- NEWSLETTER -->
+<section class="newsletter"><div class="container"><div class="newsletter-inner">
+  <div class="newsletter-text"><h2>Stay in the Loop</h2><p>Monthly updates on our impact, campaigns, and how you can help.</p></div>
+  <form class="newsletter-form" data-form="newsletter"><input type="email" placeholder="Your email address" required /><button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i>Subscribe</button></form>
+</div></div></section>
+
+<!-- FOOTER -->
+<footer><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><a href="index.html" class="nav-logo"><i class="fas fa-seedling"></i><span>STACKLY</span></a><p>Working to create a world where every person has access to education, healthcare, and opportunity.</p><div class="footer-social"><a href="index.html" class="social-btn"><i class="fab fa-facebook-f"></i></a><a href="index.html" class="social-btn"><i class="fab fa-twitter"></i></a><a href="index.html" class="social-btn"><i class="fab fa-instagram"></i></a><a href="index.html" class="social-btn"><i class="fab fa-linkedin-in"></i></a></div></div>
+    <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="campaigns.html">Campaigns</a></li><li><a href="volunteer.html">Volunteer</a></li><li><a href="contact.html" class="active">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Programs</h4><ul><li><a href="services.html">Education</a></li><li><a href="services.html">Healthcare</a></li><li><a href="services.html">Women Empowerment</a></li><li><a href="services.html">Environment</a></li><li><a href="services.html">Emergency Relief</a></li></ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul><li><a href="about.html">Geneva, Switzerland</a></li><li><a href="about.html">+41 22 123 4567</a></li><li><a href="about.html">hello@stackly.org</a></li><li><a href="login.html">Staff Login</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 STACKLY. All rights reserved.</p><div class="footer-bottom-links"><a href="index.html">Privacy</a><a href="index.html">Terms</a></div></div>
+</div></footer>
+<script src="main.js"></script>
+<script src="enhancements.js"></script>
+
+<!-- FLOATING DONATE WIDGET -->
+<div id="floating-donate" style="position:fixed;bottom:32px;right:28px;z-index:9000;display:flex;flex-direction:column;align-items:flex-end;gap:10px">
+  <div class="float-donate-card">
+    <div class="fdc-title">Quick Donate 💚</div>
+    <div class="fdc-amounts">
+      <button class="fdc-amt" onclick="selectAmt(this,'10')">$10</button>
+      <button class="fdc-amt active" onclick="selectAmt(this,'25')">$25</button>
+      <button class="fdc-amt" onclick="selectAmt(this,'50')">$50</button>
+      <button class="fdc-amt" onclick="selectAmt(this,'100')">$100</button>
+    </div>
+    <a href="campaigns.html" class="fdc-cta" id="fdc-cta">Donate $25 Now</a>
+  </div>
+  <div class="float-donate-btn-wrap">
+    <span class="float-donate-pulse"></span>
+    <a href="campaigns.html" class="float-donate-btn"><i class="fas fa-heart"></i> Donate Now</a>
+  </div>
+</div>
+<script>
+(function(){const bar=document.getElementById('scroll-progress');if(!bar)return;window.addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=(window.scrollY/h*100)+'%';},{passive:true});})();
+function selectAmt(el,val){document.querySelectorAll('.fdc-amt').forEach(b=>b.classList.remove('active'));el.classList.add('active');document.getElementById('fdc-cta').textContent='Donate $'+val+' Now';}
+(function(){const w=document.getElementById('floating-donate'),footer=document.querySelector('footer');if(!w||!footer)return;new IntersectionObserver(e=>{w.style.opacity=e[0].isIntersecting?'0':'1';w.style.pointerEvents=e[0].isIntersecting?'none':'';},{threshold:0.1}).observe(footer);})();
+</script>
+
+</body>
+</html>

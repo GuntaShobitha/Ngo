@@ -182,6 +182,8 @@
       width: 480px;
       background: var(--bg2);
       display: flex;
+gap: 20px;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 40px 32px;
@@ -444,7 +446,103 @@
       color: var(--txt2);
     }
     .signup-text a { color: var(--accent); font-weight: 600; }
-    .signup-text a:hover { text-decoration: underline; }
+    .signup-text a:hover { text-decoration: underline; } 
+
+
+
+
+
+
+
+
+
+
+
+
+    .back-home-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 28px;
+    border-radius:50px;
+    border:1px solid rgba(255,170,0,0.25);
+    background:transparent;
+    color:#d8c3a5;
+    text-decoration:none;
+    font-size:1rem;
+    font-weight:600;
+    transition:all .3s ease;
+    backdrop-filter:blur(10px);
+}
+
+.back-home-btn i{
+    font-size:0.95rem;
+}
+
+.back-home-btn:hover{
+    transform:translateY(-2px);
+    background:rgba(255,170,0,0.12);
+    border-color:rgba(255,170,0,0.4);
+}
+
+@media(max-width:768px){
+    .back-home-btn{
+        padding:12px 22px;
+        font-size:0.9rem;
+        gap:8px;
+    }
+}
+
+@media(max-width:480px){
+    .back-home-btn{
+        width:100%;
+        justify-content:center;
+        padding:12px 18px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /* ── SUCCESS OVERLAY ── */
     .login-success {
@@ -610,6 +708,13 @@
         background: var(--bg);
         padding: 32px 20px;
       }
+
+      .back-home-btn {
+        position: relative;
+        left: 16px; 
+        width: auto;
+        margin: 0;
+      }
     }
     @media (max-width: 480px) {
       .login-card { padding: 32px 24px; }
@@ -700,8 +805,22 @@
   </div>
 
   <!-- ═══ RIGHT: Login Card ═══ -->
+   
+
+
+
+
   <div class="login-right">
+    <a href="index.html" class="back-home-btn">
+  <i class="fas fa-arrow-left"></i>
+  Back to Home
+</a>
     <div class="login-card" id="login-card">
+
+
+    
+
+
 
       <!-- Success overlay -->
       <div class="login-success" id="login-success">
@@ -726,7 +845,20 @@
         </button>
       </div>
 
-      <div class="divider">or continue with email</div>
+      <div class="divider">or continue with email</div> 
+
+
+
+
+
+      
+
+
+
+
+
+
+
 
       <!-- Form -->
       <form id="login-form" novalidate>
