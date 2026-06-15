@@ -174,20 +174,7 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border-subtle)}
 .footer-bottom-links a:hover{color:var(--text)}
 
 /* ─── FLOATING WIDGET ─── */
-.float-donate-btn-wrap{position:relative;display:flex;align-items:center;justify-content:flex-end}
-.float-donate-pulse{position:absolute;width:100%;height:100%;border-radius:50px;background:var(--accent);animation:floatPulse 2s ease-in-out infinite;pointer-events:none}
-@keyframes floatPulse{0%,100%{transform:scale(1);opacity:.3}50%{transform:scale(1.15);opacity:0}}
-.float-donate-btn{position:relative;display:flex;align-items:center;gap:8px;background:var(--accent);color:#fff;padding:13px 22px;border-radius:50px;font-weight:700;font-size:.875rem;box-shadow:0 8px 28px var(--accent-glow);transition:var(--transition)}
-.float-donate-btn:hover{background:var(--accent-light);transform:translateY(-2px)}
-.float-donate-card{background:var(--bg-card2);border:1px solid rgba(67,160,71,.25);border-radius:14px;padding:16px 18px;width:210px;box-shadow:var(--shadow);transform:translateY(10px);opacity:0;pointer-events:none;transition:var(--transition)}
-.float-donate-card.visible{transform:translateY(0);opacity:1;pointer-events:all}
-.fdc-title{font-size:.8rem;font-weight:700;color:var(--text-secondary);margin-bottom:10px;letter-spacing:.5px}
-.fdc-amounts{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px}
-.fdc-amt{padding:7px;border-radius:7px;font-size:.8rem;font-weight:700;cursor:pointer;border:1px solid var(--border-subtle);background:transparent;color:var(--text-secondary);transition:var(--transition);font-family:inherit}
-.fdc-amt:hover{border-color:rgba(67,160,71,.3);color:var(--text)}
-.fdc-amt.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-.fdc-cta{display:block;background:var(--accent);color:#fff;text-align:center;padding:10px;border-radius:9px;font-size:.82rem;font-weight:700;transition:var(--transition)}
-.fdc-cta:hover{background:var(--accent-light)}
+
 
 /* ─── AOS-like reveal ─── */
 [data-aos]{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
@@ -700,23 +687,7 @@ footer{padding:64px 0 32px;border-top:1px solid var(--border-subtle)}
 </footer>
 
 <!-- FLOATING WIDGET (same structure, volunteer themed) -->
-<div id="floating-donate" style="position:fixed;bottom:32px;right:28px;z-index:9000;display:flex;flex-direction:column;align-items:flex-end;gap:10px">
-  <div class="float-donate-card" id="floatCard">
-    <div class="fdc-title">Quick Apply 🌿</div>
-    <div class="fdc-amounts">
-      <button class="fdc-amt active" onclick="selectCommit(this,'Weekend')">Weekend</button>
-      <button class="fdc-amt" onclick="selectCommit(this,'1 Month')">1 Month</button>
-      <button class="fdc-amt" onclick="selectCommit(this,'3 Months')">3 Months</button>
-      <button class="fdc-amt" onclick="selectCommit(this,'6 Months')">6 Months</button>
-    </div>
-    <a href="#apply" class="fdc-cta" id="fdc-cta">Apply for Weekend</a>
-  </div>
-  <div class="float-donate-btn-wrap">
-    <span class="float-donate-pulse"></span>
-    <a href="#apply" class="float-donate-btn" id="floatMainBtn">
-      <i class="fas fa-hands-helping"></i> Volunteer Now
-    </a>
-  </div>
+
 </div>
 
 <script>
@@ -813,29 +784,7 @@ function handleNewsletter(e) {
 }
 
 /* ── FLOATING WIDGET ── */
-const floatCard = document.getElementById('floatCard');
-document.getElementById('floatMainBtn').addEventListener('click', (e) => {
-  // allow navigation; also toggle card visibility
-  floatCard.classList.toggle('visible');
-});
-// Hide card when footer visible
-const footer = document.querySelector('footer');
-const floatWrap = document.getElementById('floating-donate');
-if (footer && floatWrap) {
-  new IntersectionObserver(e => {
-    floatWrap.style.opacity = e[0].isIntersecting ? '0' : '1';
-    floatWrap.style.pointerEvents = e[0].isIntersecting ? 'none' : '';
-  }, { threshold: 0.1 }).observe(footer);
-}
-function selectCommit(el, val) {
-  document.querySelectorAll('.fdc-amt').forEach(b => b.classList.remove('active'));
-  el.classList.add('active');
-  document.getElementById('fdc-cta').textContent = 'Apply for ' + val;
-}
-// Show card on scroll past hero
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 400) floatCard.classList.add('visible');
-}, { passive: true });
-</script>
+ 
+</script>  
 </body>
 </html>

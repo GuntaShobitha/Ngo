@@ -73,7 +73,9 @@
   <div class="container">
     <div class="about-grid">
       <div data-aos="fade-right">
-        <div class="about-img-box" style="height:420px;border-radius:20px;background:var(--bg-card);border:1px solid var(--border-subtle);display:flex;align-items:center;justify-content:center;"><i class="fas fa-globe-africa" style="font-size:10rem;color:var(--accent);opacity:0.15"></i></div>
+        <div class="about-img-box">
+    <img src="images/about-story.webp.webp" alt="Our Origin Story">
+</div>
       </div>
       <div data-aos="fade-left">
         <span class="section-label">Our Origin Story</span>
@@ -221,7 +223,7 @@
 <script src="enhancements.js"></script>
 
 <!-- FLOATING DONATE WIDGET -->
-<div id="floating-donate" style="position:fixed;bottom:32px;right:28px;z-index:9000;display:flex;flex-direction:column;align-items:flex-end;gap:10px">
+<!-- <div id="floating-donate" style="position:fixed;bottom:32px;right:28px;z-index:9000;display:flex;flex-direction:column;align-items:flex-end;gap:10px">
   <div class="float-donate-card">
     <div class="fdc-title">Quick Donate 💚</div>
     <div class="fdc-amounts">
@@ -237,11 +239,11 @@
     <a href="campaigns.html" class="float-donate-btn"><i class="fas fa-heart"></i> Donate Now</a>
   </div>
 </div>
-<script>
-(function(){const bar=document.getElementById('scroll-progress');if(!bar)return;window.addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=(window.scrollY/h*100)+'%';},{passive:true});})();
+<script> -->
+<!-- (function(){const bar=document.getElementById('scroll-progress');if(!bar)return;window.addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=(window.scrollY/h*100)+'%';},{passive:true});})();
 function selectAmt(el,val){document.querySelectorAll('.fdc-amt').forEach(b=>b.classList.remove('active'));el.classList.add('active');document.getElementById('fdc-cta').textContent='Donate $'+val+' Now';}
 (function(){const w=document.getElementById('floating-donate'),footer=document.querySelector('footer');if(!w||!footer)return;new IntersectionObserver(e=>{w.style.opacity=e[0].isIntersecting?'0':'1';w.style.pointerEvents=e[0].isIntersecting?'none':'';},{threshold:0.1}).observe(footer);})();
-</script>
+</script> -->
 
 </body>
 </html>

@@ -57,6 +57,18 @@ justify-content:center;
 font-size:6rem;
 color:var(--accent);
 }
+.blog-image{
+    height:350px;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.blog-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
 
 .blog-grid{
 display:grid;
@@ -184,7 +196,7 @@ grid-template-columns:repeat(1,1fr);
 
 <!-- PAGE HERO -->
 <section class="page-hero">
-  <span class="section-label">The STACKLY Journal</span>
+  <span class="section-label">BLOG</span>
   <h1>Stories Worth <span style="color:var(--accent)">Reading</span></h1>
   <p>Essays, guides, and field notes on technology, culture, productivity, and the ideas shaping how we live and work.</p>
   <div class="breadcrumb">
@@ -204,8 +216,8 @@ grid-template-columns:repeat(1,1fr);
 
     <div class="blog-featured-card">
       <div class="blog-image">
-        <i class="fas fa-newspaper"></i>
-      </div>
+   <img src="images/ai-featured.webp" alt="AI Future of Work">
+</div>
 
       <div class="blog-content">
         <span class="blog-category">Technology</span>
@@ -397,7 +409,7 @@ grid-template-columns:repeat(1,1fr);
 <script src="enhancements.js"></script>
 
 <!-- FLOATING SUBSCRIBE WIDGET -->
-<div id="floating-donate" style="position:fixed;bottom:32px;right:28px;z-index:9000;display:flex;flex-direction:column;align-items:flex-end;gap:10px">
+<!-- <div id="floating-donate" style="position:fixed;bottom:32px;right:28px;z-index:9000;display:flex;flex-direction:column;align-items:flex-end;gap:10px">
   <div class="float-donate-card">
     <div class="fdc-title">Quick Subscribe 📩</div>
     <div class="fdc-amounts">
@@ -417,7 +429,7 @@ grid-template-columns:repeat(1,1fr);
 (function(){const bar=document.getElementById('scroll-progress');if(!bar)return;window.addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=(window.scrollY/h*100)+'%';},{passive:true});})();
 function selectAmt(el,val){document.querySelectorAll('.fdc-amt').forEach(b=>b.classList.remove('active'));el.classList.add('active');document.getElementById('fdc-cta').textContent='Subscribe to '+val;}
 (function(){const w=document.getElementById('floating-donate'),footer=document.querySelector('footer');if(!w||!footer)return;new IntersectionObserver(e=>{w.style.opacity=e[0].isIntersecting?'0':'1';w.style.pointerEvents=e[0].isIntersecting?'none':'';},{threshold:0.1}).observe(footer);})();
-</script>
+</script> -->
 
 </body>
 </html>

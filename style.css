@@ -176,7 +176,7 @@ input, textarea, select { font-family:var(--font-b); }
 .nav-logo span { color:var(--accent); }
 
 .nav-links {
-  display:flex; align-items:center; gap:2px;
+  display:flex; align-items:center; gap:12px;
   flex:1; justify-content:center;
 }
 .nav-links li a {
@@ -268,7 +268,7 @@ body { padding-top:var(--navbar-h); }
 /* ── PAGE HERO (inner pages) ── */
 .page-hero {
   text-align:center;
-  padding:100px 24px 80px;
+  padding:30px 24px 20px;
   background:linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
   border-bottom:1px solid var(--border-subtle);
   position:relative; overflow:hidden;
@@ -373,9 +373,15 @@ body { padding-top:var(--navbar-h); }
   background:var(--bg-card);
   border:1px solid var(--border-subtle);
   border-radius:24px;
-  min-height:460px;
+  height:500px;
   display:flex; flex-direction:column;
   align-items:center; justify-content:center; gap:16px;
+}
+.hero-img-placeholder img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
 }
 .hero-img-placeholder i {
   font-size:6rem; color:var(--accent); opacity:0.2;
@@ -436,12 +442,27 @@ body { padding-top:var(--navbar-h); }
   gap:80px; align-items:center;
 }
 .about-visual { position:relative; }
-.about-img-box {
+/* .about-img-box {
   background:var(--bg-card);
   border:1px solid var(--border-subtle);
   border-radius:24px; min-height:400px;
   display:flex; align-items:center; justify-content:center;
   overflow:hidden; position:relative;
+} */
+
+.about-img-box {
+  background:var(--bg-card);
+  border:1px solid var(--border-subtle);
+  border-radius:24px;
+  height:400px;
+  overflow:hidden;
+  position:relative;
+}
+.about-img-box img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
 .about-img-box i { font-size:8rem; color:var(--accent); opacity:0.15; }
 .about-badge {
@@ -500,6 +521,9 @@ body { padding-top:var(--navbar-h); }
 .campaigns-grid {
   display:grid; grid-template-columns:repeat(3,1fr);
   gap:24px; margin-top:60px;
+}
+.grid-center{
+    margin-top:30px;
 }
 .campaign-card {
   background:var(--bg-card); border:1px solid var(--border-subtle);
@@ -591,7 +615,15 @@ body { padding-top:var(--navbar-h); }
   display:flex; align-items:center; justify-content:center;
   color:var(--accent); font-size:1.2rem; margin-bottom:18px;
   transition:var(--transition);
+} 
+
+.vol-card-meta{
+    display:flex;
+    gap:30px;
+    margin-top:15px;
+    flex-wrap:wrap;
 }
+
 .vol-card:hover .vol-icon { background:var(--accent); color:#000; }
 .vol-card h3 { font-family:var(--font-h); font-size:1rem; font-weight:700; margin-bottom:8px; }
 .vol-card p { font-size:0.83rem; color:var(--text-muted); line-height:1.6; margin-bottom:18px; }
@@ -832,6 +864,9 @@ footer {
    ───────────────────────────────────────────── */
 @media (max-width:768px) {
   :root { --navbar-h:60px; }
+  .about-img-box{
+  height:250px;
+}
 
   /* NAV */
   .nav-links { display:none; }
