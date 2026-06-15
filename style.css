@@ -30,6 +30,7 @@
   --navbar-h:        72px;
   --container:       1200px;
 }
+body,html{overflow-x:hidden; max-width:100%;}
 
 /* ── RESET ── */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
