@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>404 — Page Not Found | STACKLY</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&display=swap');
 
@@ -22,12 +23,13 @@
       --font-b: 'DM Sans', sans-serif;
     }
 
-    html { font-size: 16px; scroll-behavior: smooth; }
+    html { font-size: 16px; scroll-behavior: smooth; height: 100%; }
 
     body {
       background: var(--bg);
       color: var(--text);
       font-family: var(--font-b);
+      height: 100%;
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -42,6 +44,7 @@
       inset: 0;
       pointer-events: none;
       z-index: 0;
+
     }
 
     .bg-orb {
@@ -116,27 +119,43 @@
     }
 
     /* ── MAIN CONTENT ── */
+    /* FIX: error-wrap no longer forces 100vh height (which caused content
+       taller than the viewport to overflow and trigger scrollbars). It now
+       simply centers within the available space and shrinks if needed. */
     .error-wrap {
       position: relative;
       z-index: 10;
       text-align: center;
-      padding: 24px;
+      padding: 14px;
       max-width: 600px;
       width: 100%;
+      max-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
     }
 
     /* ── GLASSMORPHISM CARD ── */
+    /* FIX: padding scales down on shorter viewports via clamp() so the
+       card content (404 + icon + title + text + button + links) always
+       fits inside one screen with no internal/external scrolling. */
     .error-card {
       background: rgba(11,18,36,0.75);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 28px;
-      padding: 56px 48px;
+      padding: clamp(10px, 3vh, 24px) clamp(20px, 6vw, 48px);
       position: relative;
       overflow: hidden;
       animation: cardIn 0.8s cubic-bezier(0.22,1,0.36,1) both;
       box-shadow: 0 40px 100px rgba(0,0,0,0.5), 0 0 0 1px rgba(34,197,94,0.05);
+      max-height: calc(100vh - 20px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
     @keyframes cardIn {
       from { opacity: 0; transform: translateY(40px) scale(0.95); }
@@ -155,9 +174,12 @@
     @keyframes borderShine { to { background-position: -200% 0; } }
 
     /* ── 404 TEXT ── */
+    /* FIX: font-size clamp lower bound reduced & vh-aware so the huge
+       number scales down gracefully on short/landscape screens instead
+       of pushing the card past the viewport edge. */
     .error-num {
       font-family: var(--font-h);
-      font-size: clamp(7rem, 20vw, 10rem);
+      font-size: clamp(4.5rem, 14vh, 10rem);
       font-weight: 800;
       line-height: 1;
       letter-spacing: -0.04em;
@@ -216,18 +238,22 @@
     }
 
     /* ── ICON RING ── */
+    /* FIX: size + margin now use clamp() tied to viewport height so this
+       element shrinks on short screens instead of adding to overflow. */
     .error-icon {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 70px; height: 70px;
+      width: clamp(48px, 9vh, 70px);
+      height: clamp(48px, 9vh, 70px);
       background: var(--accent-glow);
       border: 1px solid rgba(34,197,94,0.25);
       border-radius: 50%;
-      font-size: 1.8rem;
+      font-size: clamp(1.2rem, 3vh, 1.8rem);
       color: var(--accent);
-      margin: 0 auto 20px;
+      margin: 0 auto clamp(10px, 2vh, 20px);
       animation: iconSpin 0.8s 0.6s cubic-bezier(0.34,1.56,0.64,1) both, iconGlow 3s 1.4s ease-in-out infinite;
+      flex-shrink: 0;
     }
     @keyframes iconSpin {
       from { opacity: 0; transform: scale(0) rotate(-180deg); }
@@ -239,20 +265,24 @@
     }
 
     /* ── TEXT ── */
+    /* FIX: margins reduced with clamp() so title/subtitle take less
+       vertical space on shorter viewports. */
     .error-title {
       font-family: var(--font-h);
-      font-size: clamp(1.4rem, 4vw, 1.9rem);
+      font-size: clamp(1.2rem, 3.4vh, 1.9rem);
       font-weight: 800;
-      margin-bottom: 14px;
+      margin-bottom: clamp(8px, 1.6vh, 14px);
       animation: fadeUp 0.7s 0.5s ease both;
+      flex-shrink: 0;
     }
     .error-sub {
       color: var(--muted);
-      font-size: clamp(0.85rem, 2vw, 0.95rem);
-      line-height: 1.75;
+      font-size: clamp(0.8rem, 1.8vh, 0.95rem);
+      line-height: 1.6;
       max-width: 380px;
-      margin: 0 auto 32px;
+      margin: 0 auto clamp(16px, 3vh, 32px);
       animation: fadeUp 0.7s 0.7s ease both;
+      flex-shrink: 0;
     }
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
@@ -260,17 +290,19 @@
     }
 
     /* ── BUTTON ── */
+    /* FIX: vertical padding scales with vh so the button doesn't force
+       extra height on compact screens. */
     .btn-home {
       display: inline-flex;
       align-items: center;
       gap: 10px;
       background: var(--accent);
       color: #000;
-      padding: 14px 32px;
+      padding: clamp(10px, 2vh, 14px) clamp(22px, 5vw, 32px);
       border-radius: 12px;
       font-family: var(--font-h);
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: clamp(0.85rem, 1.9vh, 0.95rem);
       text-decoration: none;
       border: none;
       cursor: pointer;
@@ -279,6 +311,7 @@
       animation: fadeUp 0.7s 0.9s ease both,
                  btnGlow 2.5s 1.9s ease-in-out infinite;
       transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease;
+      flex-shrink: 0;
     }
     .btn-home:hover {
       transform: translateY(-4px) scale(1.04);
@@ -307,13 +340,15 @@
     
 
     /* ── QUICK LINKS ── */
+    /* FIX: top margin scales down with vh on short screens. */
     .quick-links {
       display: flex;
       gap: 10px;
       justify-content: center;
       flex-wrap: wrap;
-      margin-top: 20px;
+      margin-top: clamp(12px, 2.4vh, 20px);
       animation: fadeUp 0.7s 1.3s ease both;
+      flex-shrink: 0;
     }
     .quick-link {
       display: inline-flex;
@@ -337,6 +372,8 @@
     .quick-link i { font-size: 0.72rem; color: var(--accent); }
 
     /* ── LOGO ── */
+    /* FIX: bottom margin scales with vh so the logo block doesn't eat
+       too much vertical space on compact screens. */
     .error-logo {
       display: inline-flex;
       align-items: center;
@@ -346,30 +383,46 @@
       font-weight: 800;
       color: var(--text);
       text-decoration: none;
-      margin-bottom: 32px;
+      margin-bottom: clamp(12px, 2.6vh, 32px);
       animation: fadeUp 0.7s 0.1s ease both;
+      flex-shrink: 0;
     }
     .error-logo i { color: var(--accent); }
     .error-logo span { color: var(--accent); }
 
     /* ── DIVIDER ── */
+    /* FIX: vertical margin scales with vh. */
     .error-divider {
       height: 1px;
+      width: 100%;
       background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
-      margin: 28px 0;
+      margin: clamp(14px, 2.6vh, 28px) 0;
+      flex-shrink: 0;
     }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
-      .error-card { padding: 40px 24px; border-radius: 20px; }
-      .error-num { font-size: clamp(5rem, 22vw, 7rem); }
-      .btn-home { padding: 12px 24px; font-size: 0.88rem; }
+      .error-card { border-radius: 20px; }
+      .btn-home { font-size: 0.88rem; }
       .quick-links { gap: 8px; }
       .quick-link { padding: 7px 12px; font-size: 0.72rem; }
     }
-    @media (max-width: 380px) {
-      .error-card { padding: 32px 18px; }
-      .error-num { font-size: 5rem; }
+
+    /* FIX: dedicated short-viewport (landscape phones / small laptops)
+       breakpoint to compress spacing further without altering colors,
+       gradients, or any visual styling — only sizing. */
+    @media (max-height: 700px) {
+      .error-logo { margin-bottom: 10px; }
+      .error-icon { margin-bottom: 8px; }
+      .error-title { margin-bottom: 6px; }
+      .error-sub { margin-bottom: 14px; }
+      .error-divider { margin: 12px 0; }
+      .quick-links { margin-top: 10px; }
+    }
+    @media (max-height: 560px) {
+      .error-num { font-size: clamp(3.5rem, 12vh, 6rem); }
+      .error-icon { width: 44px; height: 44px; font-size: 1.1rem; }
+      .error-sub { display: none; }
     }
   </style>
 </head>
@@ -389,7 +442,7 @@
   <div class="error-card">
 
     <a href="index.html" class="error-logo">
-      <i class="fas fa-seedling"></i><span>STACKLY</span>
+       <a  href="index.html" class="nav-logo"><img src="./images//logo-dark.webp" alt="STACKLY Logo" class="dashboard-logo-img" /></a>
     </a>
 
     <div class="error-num">404</div>
@@ -470,7 +523,7 @@
 
 
 <!-- FLOATING DONATE WIDGET -->
-<div id="floating-donate" style="position:fixed;bottom:32px;right:28px;z-index:9000;display:flex;flex-direction:column;align-items:flex-end;gap:10px">
+<!-- <div id="floating-donate" style="position:fixed;bottom:32px;right:28px;z-index:9000;display:flex;flex-direction:column;align-items:flex-end;gap:10px">
   <div class="float-donate-card">
     <div class="fdc-title">Quick Donate 💚</div>
     <div class="fdc-amounts">
@@ -485,7 +538,7 @@
     <span class="float-donate-pulse"></span>
     <a href="campaigns.html" class="float-donate-btn"><i class="fas fa-heart"></i> Donate Now</a>
   </div>
-</div>
+</div> -->
 <script>
 (function(){const bar=document.getElementById('scroll-progress');if(!bar)return;window.addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=(window.scrollY/h*100)+'%';},{passive:true});})();
 function selectAmt(el,val){document.querySelectorAll('.fdc-amt').forEach(b=>b.classList.remove('active'));el.classList.add('active');document.getElementById('fdc-cta').textContent='Donate $'+val+' Now';}

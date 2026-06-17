@@ -25,12 +25,114 @@
     .amount-btn:hover, .amount-btn.active { border-color:var(--accent); color:var(--accent); background:var(--accent-glow); }
     @media(max-width:1024px){ .campaigns-full-grid{grid-template-columns:repeat(2,1fr);} .completed-grid{grid-template-columns:repeat(2,1fr);} .donate-cta-inner{grid-template-columns:1fr;} }
     @media(max-width:600px){ .campaigns-full-grid{grid-template-columns:1fr;} .completed-grid{grid-template-columns:1fr;} }
+
+    /* Donation Form */
+[data-form="donate"]{
+    max-width:650px;
+    margin:auto;
+    background:rgba(255,255,255,0.03);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:20px;
+    padding:36px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    transition:all .3s ease;
+}
+
+[data-form="donate"]:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 40px rgba(0,0,0,0.12);
+}
+
+[data-form="donate"] h3{
+    text-align:center;
+    margin-bottom:28px;
+    font-size:1.4rem;
+    font-weight:700;
+    color:var(--text-primary);
+}
+
+/* Labels */
+[data-form="donate"] label{
+    display:block;
+    margin-bottom:8px;
+    font-size:.9rem;
+    font-weight:600;
+    color:var(--text-secondary);
+}
+
+/* Inputs & Select */
+[data-form="donate"] .form-input,
+[data-form="donate"] .form-select{
+    width:100%;
+    padding:14px 16px;
+    border:1px solid var(--border-subtle);
+    border-radius:12px;
+    background:rgba(255,255,255,0.04);
+    color:var(--text-primary);
+    transition:all .3s ease;
+    font-size:.95rem;
+}
+
+[data-form="donate"] .form-input:focus,
+[data-form="donate"] .form-select:focus{
+    outline:none;
+    border-color:var(--accent);
+    box-shadow:0 0 0 4px rgba(0,255,170,.12);
+}
+
+/* Form spacing */
+[data-form="donate"] .form-group{
+    margin-bottom:18px;
+}
+
+[data-form="donate"] .form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    margin-bottom:18px;
+}
+
+/* Button */
+[data-form="donate"] .btn-primary{
+    height:52px;
+    border:none;
+    border-radius:12px;
+    font-weight:600;
+    font-size:1rem;
+    transition:all .3s ease;
+    margin-top:10px;
+}
+
+[data-form="donate"] .btn-primary:hover{
+    transform:translateY(-2px);
+}
+
+/* Security Text */
+[data-form="donate"] p{
+    line-height:1.6;
+}
+
+/* Mobile */
+@media (max-width:768px){
+    [data-form="donate"]{
+        padding:24px;
+        border-radius:16px;
+    }
+
+    [data-form="donate"] .form-row{
+        grid-template-columns:1fr;
+        gap:0;
+    }
+}
+
   </style>
 </head>
 <body>
 <div id="page-loader"><div class="loader-inner"><div class="loader-logo">STACKLY</div><div class="loader-bar"><div class="loader-bar-fill"></div></div></div></div>
 <nav class="navbar" id="navbar"><div class="container"><div class="nav-inner">
-  <a href="index.html" class="nav-logo"><i class="fas fa-seedling"></i><span>STACKLY</span></a>
+  <a href="index.html" class="nav-logo"><img src="./images//logo-dark.webp" alt="STACKLY Logo" class="nav-logo-img" /></a>
   <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="campaigns.html" class="active">Campaigns</a></li><li><a href="blog.html">Blog</a></li><li><a href="volunteer.html">Volunteer</a></li><li><a href="contact.html">Contact</a></li></ul>
   <div class="nav-actions"><a href="login.html" class="btn-nav-login">Login</a><a href="campaigns.html" class="btn-donate">Donate Now</a></div>
   <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
@@ -189,7 +291,14 @@
   <form class="newsletter-form" data-form="newsletter"><input type="email" placeholder="Your email address" required /><button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i>Subscribe</button></form>
 </div></div></section>
 <footer><div class="container">
-  <div class="footer-grid"><div class="footer-brand"><a href="index.html" class="nav-logo"><i class="fas fa-seedling"></i><span>STACKLY</span></a><p>Working to create a world where every person has access to education, healthcare, and opportunity.</p><div class="footer-social"><a href="index.html" class="social-btn"><i class="fab fa-facebook-f"></i></a><a href="index.html" class="social-btn"><i class="fab fa-twitter"></i></a><a href="index.html" class="social-btn"><i class="fab fa-instagram"></i></a><a href="index.html" class="social-btn"><i class="fab fa-linkedin-in"></i></a></div></div>
+  <div class="footer-grid"><div class="footer-brand">
+    <a href="index.html" class="nav-logo"><img src="./images//logo-dark.webp" alt="STACKLY Logo" class="nav-logo-img" /></a>
+    <p>Working to create a world where every person has access to education, healthcare, and opportunity.</p><div class="footer-social">
+      <a href="404.html" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+      <a href="404.html" class="social-btn"><i class="fab fa-twitter"></i></a>
+      <a href="404.html" class="social-btn"><i class="fab fa-instagram"></i></a>
+      <a href="404.html" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+    </div></div>
   <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="campaigns.html">Campaigns</a></li><li><a href="volunteer.html">Volunteer</a></li></ul></div>
   <div class="footer-col"><h4>Programs</h4><ul><li><a href="services.html">Education</a></li><li><a href="services.html">Healthcare</a></li><li><a href="services.html">Women Empowerment</a></li><li><a href="services.html">Environment</a></li><li><a href="services.html">Emergency Relief</a></li></ul></div>
   <div class="footer-col"><h4>Contact</h4><ul><li><a href="about.html">Geneva, Switzerland</a></li><li><a href="about.html">hello@stackly.org</a></li><li><a href="login.html">Staff Login</a></li></ul></div></div>

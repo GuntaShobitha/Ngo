@@ -1455,9 +1455,18 @@ footer {
 
 
 
+.nav-logo-img {
+  height: 40px;
+  width: 150px;
+  backgrround-size: cover;
+}
 
 
-
+.dashboard-logo-img {
+  height: 60px;
+  width: 200px;
+  backgrround-size: cover;
+}
 
 
 
